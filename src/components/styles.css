@@ -1,6 +1,6 @@
 /* Css Footer */
 .footer {
-  position: absolute;
+  position: fixed;
   bottom: 0;
   left: 0;
   width: 100%;
@@ -43,7 +43,7 @@
   margin-right: 10px;
 }
 
-/* Css Search bar */
+/* Css Welcome */
 .content-welcome {
   display: flex;
   justify-content: space-between;
@@ -62,7 +62,7 @@
   background-color: #3a3461;
   margin-right: 10px;
   height: 20px;
-  width: 100px;
+  width: 120px;
   border-radius: 5px;
   text-align: center;
   position: relative;
@@ -89,7 +89,7 @@
   padding-left: 5px;
   position: absolute;
   top: 0;
-  left: 0;
+  left: 5px;
 }
 
 .money {
@@ -97,3 +97,33 @@
   padding-left: 30px;
 }
 
+.img-user {
+  margin-left: 10px;
+  width: 28px;
+  border-radius: 50%;
+}
+
+.content-user-profile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Css CardCurrency */
+.content-currency {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #13111D;
+  color: white;
+  margin: 20px 10px;
+  border-radius: 10px;
+  height: 50px;
+  font-size: 1.2em;
+}
+
+/* Loading */
+.img-gif-loading {
+  margin-top: 150px;
+  width: 100%;
+}

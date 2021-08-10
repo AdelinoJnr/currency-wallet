@@ -11,7 +11,7 @@ export function CurrencyProvider({ children }) {
       setTimeout(async() => {
         const data = await getCurrencyApi();
         setCurrency(data);
-      }, 2000)
+      }, 3000)
     };
     fetchApi();
   }, [])

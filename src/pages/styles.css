@@ -1,4 +1,65 @@
-main {
+/* Perfil */
+.content-perfil {
+  margin-top: 80px;
+  display: flex;
+}
+
+.img-user-perfil {
+  width: 140px;
+  height: 140px;
+  background-size: cover;
+  border-radius: 50%;
+  margin-left: 20px;
+}
+
+.content-data-user {
   display: flex;
   flex-direction: column;
+  margin-bottom: 20px;
+  justify-content: center;
+  color: white;
+  font-weight: 500;
+  padding: 10px;
+}
+
+.user-name-perfil {
+  font-size: 1.6em;
+}
+
+.btn-padrao {
+  margin: 10px;
+  text-align: center;
+  height: 30px;
+  border-radius: 20px;
+  border: none;
+  width: 90%;
+  color: white;
+  background-color: rgb(20, 112, 20);
+}
+
+.btn-exit {
+  background-color: rgb(155, 10, 10);
+}
+
+.btn-ladoalado {
+  width: 44%;
+}
+
+.content-btn-perfil {
+  margin-top: 50px;
+}
+
+/* Wallet */
+.content-balance {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #3a3461;
+  width: 90%;
+  height: 40px;
+  margin: 60px auto;
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 1.2em;
+  color: white;
 }
