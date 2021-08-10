@@ -1,21 +1,28 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext } from 'react';
+import Footer from '../components/Footer';
+import Loading from '../components/Loading';
+import Header from '../components/Header';
+import Welcome from '../components/Welcome';
+import Currencys from '../components/Currencys';
 
-import { getCurrencyApi } from '../services/requestApi';
+import { CurrencyContext } from '../store/Currency/currency';
 
 function Wallet() {
-  const [currency, setCurrency] = useState({});
+  const {
+    currency,
+  } = useContext(CurrencyContext);
 
-  useEffect(() => {
-    const fetchApi = async () => {
-      const data = await getCurrencyApi();
-      setCurrency(data);
-    };
-    fetchApi();
-  }, [])
-  console.log(currency);
+  if (!currency) {
+    return <Loading />
+  }
+
   return (
     <div>
-      Carteira
+      <Header />
+      <hr />
+      <Welcome />
+      <Currencys />
+      <Footer />
     </div>
   );
 }

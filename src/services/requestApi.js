@@ -3,5 +3,3 @@ export const getCurrencyApi = async () => {
   const data = await request.json();
   return data;
 };
-
-// https://www.mercadobitcoin.net/api/BTC/ticker/
