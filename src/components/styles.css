@@ -1,0 +1,129 @@
+/* Css Footer */
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+.content-footer {
+  height: 50px;
+  width: 100%;
+  background-color: #13111D;
+  color: #ff932f;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.icons-footer {
+  width: 25px;
+  height: 25px;
+}
+
+/* Css Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 50px;
+  background-color: #13111D;
+  color: white;
+}
+
+.content-logo {
+  margin-left: 10px;
+  font-size: 2em;
+}
+
+.icon-hamb {
+  width: 25px;
+  height: 25px;
+  margin-right: 10px;
+}
+
+/* Css Welcome */
+.content-welcome {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #13111D;
+  color: white;
+  height: 40px;
+}
+
+.user-name {
+  font-size: 1.2em;
+  margin-left: 10px;
+}
+
+.content-money {
+  background-color: #3a3461;
+  margin-right: 10px;
+  height: 20px;
+  width: 120px;
+  border-radius: 5px;
+  text-align: center;
+  position: relative;
+}
+
+.icon-money {
+  position: absolute;
+  top: 1;
+  left: -22px;
+  width: 20px;
+  height: 20px;
+  color: green;
+}
+
+.content-money {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 1em;
+}
+
+.sigla {
+  font-size: 1.3em;
+  padding-left: 5px;
+  position: absolute;
+  top: 0;
+  left: 5px;
+}
+
+.money {
+  font-size: 1.1em;
+  padding-left: 30px;
+}
+
+.img-user {
+  margin-left: 10px;
+  width: 28px;
+  border-radius: 50%;
+}
+
+.content-user-profile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Css CardCurrency */
+.content-currency {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #13111D;
+  color: white;
+  margin: 20px 10px;
+  border-radius: 10px;
+  height: 50px;
+  font-size: 1.2em;
+}
+
+/* Loading */
+.img-gif-loading {
+  margin-top: 150px;
+  width: 100%;
+}
