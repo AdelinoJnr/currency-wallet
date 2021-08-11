@@ -13,7 +13,7 @@ function Home() {
   } = useContext(CurrencyContext);
 
   if (!currency) {
-    return <Loading />
+    return <Loading />;
   }
 
   return (

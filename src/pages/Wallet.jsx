@@ -11,7 +11,7 @@ function Wallet() {
   } = useContext(CurrencyContext);
 
   if (!currency) {
-    return <Loading />
+    return <Loading />;
   }
 
   return (

@@ -1,20 +1,22 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import './styles.css'
+import './styles.css';
 
 function Login() {
   return (
     <main>
       <h3>Sign up</h3>
-      <input 
+      <input
         placeholder="Email"
       />
-      <input 
+      <input
         placeholder="Password"
       />
-      <label htmlFor="conect">Manter conectado</label>
-      <input type="checkbox" id="conect" />
+      <label htmlFor="conect">
+        Manter conectado
+        <input type="checkbox" id="conect" />
+      </label>
       <span>esqueceu a senha?</span>
       <button type="button">Login</button>
 
@@ -23,7 +25,11 @@ function Login() {
       <button type="button">Entrar com Google</button>
       <button type="button">Entrar com Facebook</button>
 
-      <span>Ainda nao tem cadastro? <Link to="/">sign in</Link></span>
+      <span>
+        Ainda nao tem cadastro?
+        {' '}
+        <Link to="/">sign in</Link>
+      </span>
     </main>
   );
 }

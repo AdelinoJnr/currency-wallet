@@ -6,7 +6,7 @@ function Welcome() {
   return (
     <section className="content-welcome">
       <div className="content-user-profile">
-        <img className="img-user" src={ Obama } alt="Foto usuario" />
+        <img className="img-user" src={Obama} alt="Foto usuario" />
         <p className="user-name">Barack Obama</p>
       </div>
       <div className="content-money">

@@ -2,21 +2,17 @@ import React, { useContext } from 'react';
 import { CurrencyContext } from '../store/Currency/currency';
 import CardCurrency from './CardCurrency';
 
-function Currencys(props) {
+function Currencys() {
   const {
     currency,
   } = useContext(CurrencyContext);
 
-  const renderCurrency = () => {
-    return Object.keys(currency).map((curr, index) => {
-      return (
-        <CardCurrency
-          key={curr}
-          currency={Object.values(currency)[index]}
-        />
-      )
-    })
-  };
+  const renderCurrency = () => Object.keys(currency).map((curr, index) => (
+    <CardCurrency
+      key={curr}
+      currency={Object.values(currency)[index]}
+    />
+  ));
 
   return (
     <section>

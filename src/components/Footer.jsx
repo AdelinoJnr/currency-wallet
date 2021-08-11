@@ -1,8 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { AiFillHome } from 'react-icons/ai';
-import { FaWallet } from 'react-icons/fa';
-import { FaUserCircle } from 'react-icons/fa';
+import { FaWallet, FaUserCircle } from 'react-icons/fa';
 
 import './styles.css';
 

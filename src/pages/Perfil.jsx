@@ -10,7 +10,7 @@ function Perfil() {
       <hr />
       <section>
         <section className="content-perfil">
-          <img className="img-user-perfil" src={ Obama } alt="Foto do Usuario" />
+          <img className="img-user-perfil" src={Obama} alt="Foto do Usuario" />
           <div className="content-data-user">
             <p className="user-name-perfil">Barack Obama</p>
             <p className="user-email-perfil">barackobama@gmail.com</p>
