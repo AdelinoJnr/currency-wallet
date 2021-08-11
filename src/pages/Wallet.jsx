@@ -6,9 +6,7 @@ import Loading from '../components/Loading';
 import { CurrencyContext } from '../store/Currency/currency';
 
 function Wallet() {
-  const {
-    currency,
-  } = useContext(CurrencyContext);
+  const { currency } = useContext(CurrencyContext);
 
   if (!currency) {
     return <Loading />;
@@ -24,20 +22,16 @@ function Wallet() {
           <p>100000</p>
           <select name="" id="">
             <option value="BRL">BRL</option>
-            {Object.keys(currency).map((sigla) => <option key={sigla}>{sigla}</option>)}
+            {Object.keys(currency).map(sigla => (
+              <option key={sigla}>{sigla}</option>
+            ))}
           </select>
         </div>
         <div>
-          <button
-            type="button"
-            className="btn-padrao btn-ladoalado btn-exit"
-          >
+          <button type="button" className="btn-padrao btn-ladoalado btn-exit">
             Depositar
           </button>
-          <button
-            type="button"
-            className="btn-padrao btn-ladoalado"
-          >
+          <button type="button" className="btn-padrao btn-ladoalado">
             Retirar
           </button>
         </div>

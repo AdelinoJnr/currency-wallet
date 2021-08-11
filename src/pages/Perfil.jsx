@@ -17,8 +17,12 @@ function Perfil() {
           </div>
         </section>
         <section className="content-btn-perfil">
-          <button className="btn-padrao" type="button">Historico de compras</button>
-          <button className="btn-padrao btn-exit" type="button">Sair</button>
+          <button className="btn-padrao" type="button">
+            Historico de compras
+          </button>
+          <button className="btn-padrao btn-exit" type="button">
+            Sair
+          </button>
         </section>
       </section>
       <Footer />

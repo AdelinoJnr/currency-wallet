@@ -7,12 +7,8 @@ function Login() {
   return (
     <main>
       <h3>Sign up</h3>
-      <input
-        placeholder="Email"
-      />
-      <input
-        placeholder="Password"
-      />
+      <input placeholder="Email" />
+      <input placeholder="Password" />
       <label htmlFor="conect">
         Manter conectado
         <input type="checkbox" id="conect" />
@@ -26,9 +22,7 @@ function Login() {
       <button type="button">Entrar com Facebook</button>
 
       <span>
-        Ainda nao tem cadastro?
-        {' '}
-        <Link to="/">sign in</Link>
+        Ainda nao tem cadastro? <Link to="/">sign in</Link>
       </span>
     </main>
   );

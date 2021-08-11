@@ -8,9 +8,7 @@ import Currencys from '../components/Currencys';
 import { CurrencyContext } from '../store/Currency/currency';
 
 function Home() {
-  const {
-    currency,
-  } = useContext(CurrencyContext);
+  const { currency } = useContext(CurrencyContext);
 
   if (!currency) {
     return <Loading />;

@@ -10,9 +10,7 @@ function Footer() {
     <footer className="footer">
       <div className="content-footer">
         <Link to="/perfil">
-          <FaUserCircle
-            className="icons-footer"
-          />
+          <FaUserCircle className="icons-footer" />
         </Link>
         <Link to="/">
           <AiFillHome className="icons-footer" />
