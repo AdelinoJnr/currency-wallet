@@ -1,4 +1,4 @@
-import { createContext, useState, useEffect } from "react";
+import { createContext, useState, useEffect } from 'react';
 import { getCurrencyApi } from '../../services/requestApi';
 
 export const CurrencyContext = createContext();
@@ -8,15 +8,15 @@ export function CurrencyProvider({ children }) {
 
   useEffect(() => {
     const fetchApi = () => {
-      setTimeout(async() => {
+      setTimeout(async () => {
         const data = await getCurrencyApi();
         setCurrency(data);
-      }, 3000)
+      }, 3000);
     };
     fetchApi();
-  }, [])
+  }, []);
   return (
-    <CurrencyContext.Provider value={ {currency} }>
+    <CurrencyContext.Provider value={{ currency }}>
       {children}
     </CurrencyContext.Provider>
   );
