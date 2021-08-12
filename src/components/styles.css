@@ -122,6 +122,10 @@
   font-size: 1.2em;
 }
 
+.content-currency:last-child {
+  margin-bottom: 70px;
+}
+
 /* Loading */
 .img-gif-loading {
   margin-top: 150px;

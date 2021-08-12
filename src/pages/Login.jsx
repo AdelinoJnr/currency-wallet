@@ -4,7 +4,7 @@ import { FaFacebook, FaUserCircle } from 'react-icons/fa';
 import { FcGoogle } from 'react-icons/fc';
 import { RiLockPasswordFill } from 'react-icons/ri';
 
-import './styles.css'
+import './styles.css';
 
 function Login() {
   return (

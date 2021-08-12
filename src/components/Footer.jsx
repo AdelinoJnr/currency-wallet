@@ -1,8 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { AiFillHome } from 'react-icons/ai';
-import { FaWallet } from 'react-icons/fa';
-import { FaUserCircle } from 'react-icons/fa';
+import { FaWallet, FaUserCircle } from 'react-icons/fa';
 
 import './styles.css';
 
@@ -11,9 +10,7 @@ function Footer() {
     <footer className="footer">
       <div className="content-footer">
         <Link to="/perfil">
-          <FaUserCircle
-            className="icons-footer"
-          />
+          <FaUserCircle className="icons-footer" />
         </Link>
         <Link to="/">
           <AiFillHome className="icons-footer" />
