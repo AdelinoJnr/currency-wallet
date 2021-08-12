@@ -8,3 +8,8 @@ body {
   background-color: #252531;
   font-size: 10px;
 }
+
+a {
+  text-decoration: none;
+  color: #b118a4;
+}

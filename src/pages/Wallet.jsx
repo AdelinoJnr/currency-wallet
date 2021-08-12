@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import Footer from '../components/Footer';
 import Header from '../components/Header';
 import Loading from '../components/Loading';
+import Welcome from '../components/Welcome';
 
 import { CurrencyContext } from '../store/Currency/currency';
 
@@ -16,6 +17,7 @@ function Wallet() {
     <>
       <Header />
       <hr />
+      <Welcome />
       <section>
         <div className="content-balance">
           <span>Total Balance</span>
