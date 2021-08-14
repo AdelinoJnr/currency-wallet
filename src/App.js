@@ -6,6 +6,7 @@ import Login from './pages/Login';
 import Perfil from './pages/Perfil';
 import Wallet from './pages/Wallet';
 import Cadastro from './pages/Cadastro';
+import Detalhes from './pages/Detalhes';
 
 import './styles/global.css';
 
@@ -17,6 +18,7 @@ function App() {
         <Route path="/cadastro" component={Cadastro} />
         <Route path="/perfil" component={Perfil} />
         <Route path="/wallet" component={Wallet} />
+        <Route exact path="/:id" component={Detalhes} />
         <Route exact path="/" component={Home} />
       </Switch>
     </CurrencyProvider>

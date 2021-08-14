@@ -12,7 +12,7 @@ function Welcome() {
       <div className="content-money">
         <RiMoneyDollarCircleFill className="icon-money" />
         <div className="content-money">
-          <span className="money">0</span>
+          <span className="money">2937000</span>
           <span className="sigla">BRL</span>
         </div>
       </div>
