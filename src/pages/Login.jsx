@@ -16,6 +16,7 @@ function Login() {
           id="email"
           className="inputs"
           placeholder="Email"
+          type="email"
         />
       </label>
       <label className="label-input" htmlFor="password">
@@ -24,6 +25,7 @@ function Login() {
           id="password"
           className="inputs"
           placeholder="Senha"
+          type="password"
         />
       </label>
       <div className="content-facilitacao">
