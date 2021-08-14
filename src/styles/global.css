@@ -13,3 +13,7 @@ a {
   text-decoration: none;
   color: #b118a4;
 }
+
+*:focus {
+  outline: none;
+}
