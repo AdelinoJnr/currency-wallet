@@ -17,3 +17,7 @@ a {
 *:focus {
   outline: none;
 }
+
+button:disabled {
+  background-color: #6f952ad8;
+}
