@@ -2,10 +2,12 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 function CardCurrency({ currency }) {
-  const { code, codein, name, ask, high } = currency;
-  const percent = 100 - (ask * 100 / high);
+  const {
+    code, codein, name, ask, high,
+  } = currency;
+  const percent = 100 - ((ask * 100) / high);
 
-  const renderCurrency = turismo => {
+  const renderCurrency = (turismo) => {
     const currencyName = turismo
       ? `${name.split('/')[0]}/Turismo`
       : name.split('/')[0];

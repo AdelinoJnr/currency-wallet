@@ -4,7 +4,9 @@ import { Link } from 'react-router-dom';
 import { converteInNumber } from '../utils/functions';
 
 function Investimentos({ currency, investiment }) {
-  const { ask, code, name, currentValue, totalValue } = investiment;
+  const {
+    ask, code, name, currentValue, totalValue,
+  } = investiment;
 
   const calculateGain = () => {
     const priceCurrency = converteInNumber(currency[code].ask);

@@ -10,14 +10,14 @@ import { updateLocalStorage } from '../utils/functions';
 
 function Detalhes({ match }) {
   const [currency, setCurrency] = useState(false);
-  const [currentValue, setcurrentValue] = useState('')
+  const [currentValue, setcurrentValue] = useState('');
   const { name, ask, code } = currency;
 
   useEffect(() => {
     const fetchAPI = async () => {
       const { id } = match.params;
       const data = await getCurrencyApiQuery(id);
-      setCurrency(data[0])
+      setCurrency(data[0]);
     };
     fetchAPI();
   }, []);
@@ -29,7 +29,7 @@ function Detalhes({ match }) {
   };
 
   if (!currency) {
-    return <Loading />
+    return <Loading />;
   }
 
   return (
@@ -45,7 +45,7 @@ function Detalhes({ match }) {
           <p>{Number(ask).toFixed(2)}</p>
         </div>
         <input
-          onChange={ (ev) => setcurrentValue(ev.target.value) }
+          onChange={(ev) => setcurrentValue(ev.target.value)}
           type="number"
           name="valorCurrency"
           value={currentValue}
@@ -55,13 +55,13 @@ function Detalhes({ match }) {
           <p className="amount-to-pay">{`BRL ${renderValueToPay()}`}</p>
         </div>
         <Link
-          onClick={ () => updateLocalStorage('investimentos', {
+          onClick={() => updateLocalStorage('investimentos', {
             code,
             ask,
             name,
             currentValue,
-            totalValue: renderValueToPay()
-          }) }
+            totalValue: renderValueToPay(),
+          })}
           className="link-btn"
           to="/"
         >

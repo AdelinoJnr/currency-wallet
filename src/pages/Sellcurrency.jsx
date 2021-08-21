@@ -17,12 +17,11 @@ function Sellcurrency({ match }) {
   const { name, code, ask } = currency;
   const { currentValue } = currentCurrency;
 
-
   useEffect(() => {
     const fetchAPI = async () => {
       const { id } = match.params;
       const data = await getCurrencyApiQuery(id);
-      setCurrency(data[0])
+      setCurrency(data[0]);
     };
     fetchAPI();
   }, []);
@@ -36,14 +35,14 @@ function Sellcurrency({ match }) {
       setCurrentCurrency(filter);
     };
     updateAtualCurrency();
-  }, [])
+  }, []);
 
   const handleOnChange = ({ target: { value } }) => {
     const typedInput = converteInNumber(currentValue);
     if (value > typedInput) {
-      setQuantSell(typedInput)
+      setQuantSell(typedInput);
     } else {
-      setQuantSell(value)
+      setQuantSell(value);
     }
   };
 
@@ -54,7 +53,7 @@ function Sellcurrency({ match }) {
   };
 
   if (!currency) {
-    return <Loading />
+    return <Loading />;
   }
 
   return (
@@ -71,14 +70,14 @@ function Sellcurrency({ match }) {
             <span>{currentValue}</span>
           </div>
         </div>
-        <input className="input-sell" type="number" name="value" value={ quantSell } onChange={ handleOnChange } />
+        <input className="input-sell" type="number" name="value" value={quantSell} onChange={handleOnChange} />
         <p className="value-gain">{calculateValueGain()}</p>
         <label className="label-info-sell" htmlFor="info">
-          <input onClick={ (ev) => setCheckedInput(ev.target.checked) } type="checkbox" id="info" />
+          <input onClick={(ev) => setCheckedInput(ev.target.checked)} type="checkbox" id="info" />
           Esse processo não pode ser revertido, se você realmente deseja, marque essa opção
         </label>
         <Link to="" className="link-btn">
-          <button disabled={ !checkedInput } className="btn-padrao" type="button">Confirmar</button>
+          <button disabled={!checkedInput} className="btn-padrao" type="button">Confirmar</button>
         </Link>
       </section>
       <Footer />
