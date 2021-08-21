@@ -1,16 +1,27 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { RiMoneyDollarCircleFill } from 'react-icons/ri';
 import { Link } from 'react-router-dom';
+import { getCurrencyApiCryptoQuery } from '../services/requestApi';
+
 import { converteInNumber } from '../utils/functions';
 
-function Investimentos({ currency, investiment }) {
-  const { ask, code, name, currentValue, totalValue } = investiment;
+function Investimentos({ investiment }) {
+  const { buy, code, nome, currentValue, totalValue } = investiment;
+  const [currency, setCurrency] = useState({});
+
+  useEffect(() => {
+    const fetchApi = async() => {
+      const data =  await getCurrencyApiCryptoQuery(code);
+      setCurrency(data.ticker)
+    };
+    fetchApi();
+  }, [])
 
   const calculateGain = () => {
-    const priceCurrency = converteInNumber(currency[code].ask);
+    const priceCurrency = converteInNumber(currency.sell);
     const pricePay = converteInNumber(currentValue);
-    const current = converteInNumber(totalValue);
-    const result = priceCurrency * pricePay - current;
+    const totalPay = converteInNumber(totalValue);
+    const result = priceCurrency * pricePay - totalPay;
     if (result >= 0) {
       return `+${result.toFixed(2)}`;
     }
@@ -20,15 +31,15 @@ function Investimentos({ currency, investiment }) {
   return (
     <div className="content-investiments">
       <div className="content-info-currency">
-        <p>{name.split('/')[0]}</p>
+        <p>{nome}</p>
         <div className="content-code-currency">
           <span>{code}</span>
-          <span>{ask}</span>
+          <span>{Number(buy).toFixed(2)}</span>
         </div>
       </div>
       <div className="content-value-prices">
         <p>{totalValue}</p>
-        <span>{calculateGain()}</span>
+        {/* <span>{calculateGain()}</span> */}
       </div>
       <Link to={`/wallet/sell/${code}`}>
         <RiMoneyDollarCircleFill className="icon-investimentos" />

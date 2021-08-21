@@ -25,7 +25,7 @@ function Cadastro() {
       </label>
       <label className="label-input" htmlFor="termos">
         <input className="checkbox-termos" type="checkbox" name="termos" id="termos" />
-        <span className="text-termos">Eu li e e aceito os <Link to="/">Termos e condições</Link>de uso!</span>
+        <span className="text-termos">Eu li e e aceito os <Link to="/">Termos e condições </Link>de uso!</span>
       </label>
       <Link className="link-cadastrar-btn" to="/login">
         <button className="btn-cadastrar btn-padrao" type="button">

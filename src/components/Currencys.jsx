@@ -1,16 +1,22 @@
 import React, { useContext } from 'react';
 import { CurrencyContext } from '../store/Currency/currency';
+
 import CardCurrency from './CardCurrency';
+import Loading from './Loading';
 
 function Currencys() {
-  const { currency } = useContext(CurrencyContext);
+  const { currencyCrypto, currencyPopular } = useContext(CurrencyContext);
 
-  const renderCurrency = () =>
-    Object.keys(currency).map((curr, index) => (
-      <CardCurrency key={curr} currency={Object.values(currency)[index]} />
+  const renderCurrencyCrypto = () => 
+  currencyPopular.map((currency, index) => (
+      <CardCurrency key={index} currency={currency} />
     ));
 
-  return <section>{renderCurrency()}</section>;
+  return (
+    <section>
+      {!currencyPopular ? <Loading /> : renderCurrencyCrypto()}
+    </section>
+  );
 }
 
 export default Currencys;
