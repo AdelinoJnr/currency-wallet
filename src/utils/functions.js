@@ -13,9 +13,16 @@ export const converteInNumber = (stringNumber) => {
   return Number(stringNumber);
 };
 
-export const calculateBalanceValues = (key, array) => {
-  return array.reduce((acc, curr) => {
-    const value = converteInNumber(curr[key]);
-    return acc + value;
+export const calculateBalanceValues = (key, storage) => {
+  return storage.reduce((acc, curr) => {
+    const totalValue = converteInNumber(curr[key]);
+    const priceBuy = converteInNumber(curr.buy);
+    const result = totalValue * priceBuy;
+    return acc + result;
   }, 0)
+};
+
+export const findToCurrency = (currencys, code) => {
+  console.log(currencys, code);
+  return currencys.find((currency) => Object.keys(currency)[0] === code)
 };

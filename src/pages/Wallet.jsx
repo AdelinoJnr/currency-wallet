@@ -11,24 +11,29 @@ import { calculateBalanceValues, converteInNumber } from '../utils/functions';
 function Wallet() {
   const [totalBalance, setTotalBalance] = useState(0);
   const [lucro, setLucro] = useState(0);
-  const { currency } = useContext(CurrencyContext);
+  const { currencyCrypto } = useContext(CurrencyContext);
   const key = localStorage.getItem('investimentos');
+  const storage = key ? JSON.parse(key) : [];
+
+  const updateBalance = () => {
+    // const lucroCurrent = storage.reduce((acc, curr) => {
+    //   const inputCurrent = converteInNumber(curr.currentValue);
+    //   const searchCurrency = currencyCrypto
+    //     .find((currency) => Object.keys(currency)[0] === curr.code);
+    //   console.log(searchCurrency);
+    //   const price = searchCurrency[curr.code].sell;
+    //   const totalPrice = inputCurrent * price;
+    //   console.log(totalPrice);
+    //   return acc + totalPrice;
+    // }, 0);
+    const data = calculateBalanceValues('totalValue', storage);
+    // const calculate = lucroCurrent - data;
+    // const total = calculate >= 0 ? `+${calculate.toFixed(2)}` : calculate.toFixed(2); 
+    // setLucro(total);
+    setTotalBalance(data.toFixed(2));
+  };
 
   useEffect(() => {
-    const updateBalance = () => {
-      const storage = key ? JSON.parse(key) : [];
-      const lucroCurrent = storage.reduce((acc, curr) => {
-        const inputCurrent = converteInNumber(curr.currentValue);
-        const price = converteInNumber(currency[curr.code].ask);
-        const totalPrice = inputCurrent * price;
-        return acc + totalPrice;
-      }, 0);
-      const data = calculateBalanceValues('totalValue', storage);
-      const calculate = data - lucroCurrent;
-      const total = calculate >= 0 ? `+${calculate.toFixed(2)}` : calculate.toFixed(2); 
-      setLucro(total);
-      setTotalBalance(data.toFixed(2));
-    };
     updateBalance();
   }, []);
 
@@ -36,12 +41,12 @@ function Wallet() {
     const storage = key ? JSON.parse(key) : [];
     return (
       <section className="main-investimentos">
-        {storage.map((item, index)=> <Investimentos key={ index } investiment={item} currency={currency} />)}
+        {storage.map((item, index)=> <Investimentos key={ index } investiment={item} />)}
       </section>
     );
   };
 
-  if (!currency) {
+  if (!currencyCrypto) {
     return <Loading />;
   }
 
