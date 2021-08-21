@@ -20,7 +20,7 @@ export function CurrencyProvider({ children }) {
       setTimeout(async() => {
         const data = await getCurrencyCryptoPopular();
         setCurrencyPopular(data);
-      }, 2000)
+      }, 3000)
     };
     fetchApi();
   }, [])

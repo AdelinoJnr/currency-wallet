@@ -7,7 +7,14 @@ import { converteInNumber } from '../utils/functions';
 function CardCurrency({ currency }) {
   const code = Object.keys(currency);
   const { buy, last } = currency[code[0]];
-  const percent = 100 - (converteInNumber(Number(buy).toFixed(2)) * 100 / converteInNumber(Number(last).toFixed(2)));
+
+  const calculatePercent = () => {
+    const currencyBuy = converteInNumber(Number(buy).toFixed(2));
+    const currencyLast = converteInNumber(Number(last).toFixed(2));
+    const result = currencyBuy - currencyLast;
+    const checked = result > 0 ? `+${result.toFixed(2)} R$` : `${result.toFixed(2)} R$`;
+    return checked;
+  }
 
   return (
     <Link to={`/${code[0]}`}>
@@ -18,7 +25,7 @@ function CardCurrency({ currency }) {
         </div>
         <div className="preco-currency">
           <p>{`R$ ${Number(buy).toFixed(2)}`}</p>
-          <p>{`${percent.toFixed(2)}%`}</p>
+          <p>{calculatePercent()}</p>
         </div>
       </section>
     </Link>
