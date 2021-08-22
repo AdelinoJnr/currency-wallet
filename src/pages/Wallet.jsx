@@ -16,20 +16,20 @@ function Wallet() {
   const storage = key ? JSON.parse(key) : [];
 
   const updateBalance = () => {
-    // const lucroCurrent = storage.reduce((acc, curr) => {
-    //   const inputCurrent = converteInNumber(curr.currentValue);
-    //   const searchCurrency = currencyCrypto
-    //     .find((currency) => Object.keys(currency)[0] === curr.code);
-    //   console.log(searchCurrency);
-    //   const price = searchCurrency[curr.code].sell;
-    //   const totalPrice = inputCurrent * price;
-    //   console.log(totalPrice);
-    //   return acc + totalPrice;
-    // }, 0);
-    const data = calculateBalanceValues('totalValue', storage);
-    // const calculate = lucroCurrent - data;
-    // const total = calculate >= 0 ? `+${calculate.toFixed(2)}` : calculate.toFixed(2); 
-    // setLucro(total);
+    const lucroCurrent = storage.reduce((acc, curr) => {
+      const inputCurrent = converteInNumber(curr.totalValue);
+      const searchCurrency = currencyCrypto
+        .find((currency) => Object.keys(currency)[0] === curr.code);
+      console.log(searchCurrency);
+      const price = searchCurrency[curr.code].sell;
+      const totalPrice = inputCurrent * price;
+      return acc + totalPrice;
+    }, 0);
+    const data = calculateBalanceValues(storage);
+    const result = Number(lucroCurrent).toFixed(2)
+    const calculate = Number(result) - data;
+    const total = calculate >= 0 ? `+${calculate.toFixed(2)}` : calculate.toFixed(2); 
+    setLucro(total);
     setTotalBalance(data.toFixed(2));
   };
 
@@ -67,7 +67,7 @@ function Wallet() {
       <section>
         <div className="content-balance">
           <span>Total Balance</span>
-          <span>{lucro}</span>
+          <span>{`${lucro} BRL`}</span>
           <p>{`${totalBalance} BRL`}</p>
         </div>
       {renderInvestments()}

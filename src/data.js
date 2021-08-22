@@ -2,6 +2,12 @@ export const currencys = [
   'AAVE','ALLFT', 'AMFT', 'ARGFT', 'ASRFT', 'ATMFT', 'AXS', 'BAL', 'BARFT', 'BAT', 'BCH','BTC','CAIFT','CHZ','CITYFT', 'COMP', 'CRV', 'DAI', 'ENJ', 'ETH', 'GALFT', 'GRT', 'JUVFT', 'KNC', 'LINK', 'LTC', 'MANA', 'MCO2', 'MKR', 'NAVIFT', 'OGFT', 'PAXG', 'PFLFT', 'PSGFT', 'REN', 'SAUBERFT', 'SNX', 'THFT', 'UMA', 'UNI', 'USDC', 'WBX', 'XRP', 'YFI', 'ZRX'
 ];
 
+export const userDefault = {
+  name: 'Neymar Junior',
+  email: 'neymarPSG@gmail.com',
+  currency: 79483000
+}
+
 export const currencysNames = {
   AAVE : 'Aave',
   ACMFT : 'Fan Token ASR',

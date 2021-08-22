@@ -18,10 +18,10 @@ function Investimentos({ investiment }) {
   }, [])
 
   const calculateGain = () => {
-    const priceCurrency = converteInNumber(currency.sell);
+    const priceCurrency = converteInNumber(currency.buy);
     const pricePay = converteInNumber(currentValue);
     const totalPay = converteInNumber(totalValue);
-    const result = priceCurrency * pricePay - totalPay;
+    const result = priceCurrency * totalPay - pricePay;
     if (result >= 0) {
       return `+${result.toFixed(2)}`;
     }
@@ -38,8 +38,9 @@ function Investimentos({ investiment }) {
         </div>
       </div>
       <div className="content-value-prices">
-        <p>{totalValue}</p>
-        {/* <span>{calculateGain()}</span> */}
+        <p>{`${totalValue} ${code}`}</p>
+        <p>{`${Number(currentValue).toFixed(2)} BRL`}</p>
+        <span>{`${calculateGain()} BRL`}</span>
       </div>
       <Link to={`/wallet/sell/${code}`}>
         <RiMoneyDollarCircleFill className="icon-investimentos" />

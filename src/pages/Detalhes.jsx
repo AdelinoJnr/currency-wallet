@@ -8,7 +8,7 @@ import Welcome from '../components/Welcome';
 
 import { currencysNames } from '../data';
 import { getCurrencyApiCryptoQuery } from '../services/requestApi';
-import { updateLocalStorage } from '../utils/functions';
+import { currencyActivity, updateLocalStorage } from '../utils/functions';
 
 function Detalhes({ match }) {
   const [currency, setCurrency] = useState(false);
@@ -21,22 +21,16 @@ function Detalhes({ match }) {
       setTimeout(async() => {
         const data = await getCurrencyApiCryptoQuery(id);
         setCurrency(data.ticker);
-      }, 1500)
+      }, 2000)
     };
     fetchAPI();
   }, []);
-
-  const renderValueToPay = () => {
-    const enteredValue = Number(currentValue);
-    const currencyPrice = Number(buy);
-    return (enteredValue * currencyPrice).toFixed(2);
-  };
 
   const renderValueToPayBRL = () => {
     const enteredValue = Number(currentValue);
     const currencyPrice = Number(buy);
     const result = enteredValue / currencyPrice
-    return (result).toFixed(6);
+    return (result).toFixed(7);
   };
 
   if (!currency) {
@@ -63,16 +57,19 @@ function Detalhes({ match }) {
           className="input-investir"
         />
         <div className="content-calculo">
-          <p className="amount-to-pay">{`BRL ${renderValueToPayBRL()}`}</p>
+          <p className="amount-to-pay">{`${renderValueToPayBRL()} ${id}`}</p>
         </div>
         <Link
-          onClick={ () => updateLocalStorage('investimentos', {
-            code: id,
-            buy,
-            nome: currencysNames[id],
-            currentValue,
-            totalValue: renderValueToPayBRL()
-          }) }
+          onClick={ () => {
+            currencyActivity(Number(currentValue), 'comprar');
+            updateLocalStorage('investimentos', {
+              code: id,
+              buy,
+              nome: currencysNames[id],
+              currentValue,
+              totalValue: renderValueToPayBRL()
+            });
+          } }
           className="link-btn"
           to="/"
         >
