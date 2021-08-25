@@ -7,6 +7,7 @@ import Investimentos from '../components/Investimentos';
 
 import { CurrencyContext } from '../store/Currency/currency';
 import { calculateBalanceValues, converteInNumber } from '../utils/functions';
+import { Link } from 'react-router-dom';
 
 function Wallet() {
   const [totalBalance, setTotalBalance] = useState(0);
@@ -57,12 +58,16 @@ function Wallet() {
       <Welcome />
       <h3 className="title-login">Carteira</h3>
       <div>
-        <button type="button" className="btn-padrao btn-ladoalado btn-exit">
-          Depositar
-        </button>
-        <button type="button" className="btn-padrao btn-ladoalado">
-          Retirar
-        </button>
+        <Link to="/depositar">
+          <button type="button" className="btn-padrao btn-ladoalado btn-exit">
+            Depositar
+          </button>
+        </Link>
+        <Link to="/saque">
+          <button type="button" className="btn-padrao btn-ladoalado">
+            Retirar
+          </button>
+        </Link>
       </div>
       <section>
         <div className="content-balance">

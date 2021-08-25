@@ -28,20 +28,21 @@ export const findToCurrency = (currencys, code) => {
 const removeSellInvestiments = (code) => {
   const storage = JSON.parse(localStorage.getItem('investimentos'));
   const filetInvestiments = storage.filter((item) => item.code !== code)
-  console.log(filetInvestiments);
   localStorage.setItem('investimentos', JSON.stringify(filetInvestiments));
 };
 
 export const currencyActivity = (valor, condicao, code) => {
   const storage = JSON.parse(localStorage.getItem('user'));
-  if(condicao === 'comprar' && Number(storage.elent) < valor) {
+  const balanceClient = Number(storage.elent);
+  if(condicao === 'comprar' && balanceClient < valor) {
     return console.log("Dinheiro cobrado a mais do que o usuario tem em sua conta");
   }
   if (condicao === 'vender') removeSellInvestiments(code)
 
-  const currencyUser = condicao === 'comprar'
-    ? Number(storage.elent) - valor
-    : Number(storage.elent) + valor;
+  const currencyUser = condicao === 'comprar' || condicao === 'sacar'
+    ? balanceClient - Number(valor)
+    : balanceClient + Number(valor);
+  console.log(currencyUser);
   const user = {
     ...storage,
     elent: currencyUser.toFixed(2),
