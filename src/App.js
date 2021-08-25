@@ -10,6 +10,7 @@ import Cadastro from './pages/Cadastro';
 import Detalhes from './pages/Detalhes';
 import Sellcurrency from './pages/Sellcurrency';
 import Deposit from './pages/Deposit';
+import Withdraw from './pages/Withdraw';
 
 import './styles/global.css';
 
@@ -20,6 +21,7 @@ function App() {
         <Route path="/login" component={Login} />
         <Route path="/cadastro" component={Cadastro} />
         <Route path="/depositar" component={Deposit} />
+        <Route path="/saque" component={Withdraw} />
         <Route path="/perfil" component={Perfil} />
         <Route path="/wallet/sell/:id" component={Sellcurrency} />
         <Route path="/wallet" component={Wallet} />

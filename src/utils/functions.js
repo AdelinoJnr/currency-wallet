@@ -28,7 +28,6 @@ export const findToCurrency = (currencys, code) => {
 const removeSellInvestiments = (code) => {
   const storage = JSON.parse(localStorage.getItem('investimentos'));
   const filetInvestiments = storage.filter((item) => item.code !== code)
-  console.log(filetInvestiments);
   localStorage.setItem('investimentos', JSON.stringify(filetInvestiments));
 };
 
@@ -40,7 +39,7 @@ export const currencyActivity = (valor, condicao, code) => {
   }
   if (condicao === 'vender') removeSellInvestiments(code)
 
-  const currencyUser = condicao === 'comprar'
+  const currencyUser = condicao === 'comprar' || condicao === 'sacar'
     ? balanceClient - Number(valor)
     : balanceClient + Number(valor);
   console.log(currencyUser);

@@ -63,9 +63,11 @@ function Wallet() {
             Depositar
           </button>
         </Link>
-        <button type="button" className="btn-padrao btn-ladoalado">
-          Retirar
-        </button>
+        <Link to="/saque">
+          <button type="button" className="btn-padrao btn-ladoalado">
+            Retirar
+          </button>
+        </Link>
       </div>
       <section>
         <div className="content-balance">
