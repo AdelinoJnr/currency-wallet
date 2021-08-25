@@ -13,7 +13,7 @@ function Currencys() {
 
   return (
     <section>
-      {!currencyPopular ? <Loading /> : renderCurrencyCrypto()}
+      {currencyPopular.length > 0 ? renderCurrencyCrypto() : <Loading /> }
     </section>
   );
 }

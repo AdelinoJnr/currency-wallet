@@ -40,8 +40,7 @@ export const getCurrencyCryptoPopular = async () => {
     };
     array.push(myObj);
   });
-  const data = await Promise.all(array);
-  return data;
+  return array;
 };
 
 export const getCurrencyApiCryptoQuery = async (query) => {
