@@ -5,19 +5,17 @@ import CardCurrency from './CardCurrency';
 import Loading from './Loading';
 
 function Currencys() {
-  const { currencyCrypto, currencyPopular } = useContext(CurrencyContext);
+  const { currencyPopular } = useContext(CurrencyContext);
 
-  const renderCurrencyCrypto = () => 
-  currencyPopular.map((currency, index) => (
-      <CardCurrency key={index} currency={currency} />
-    ));
+  const renderCurrencyCrypto = () => currencyPopular.map((currency) => (
+    <CardCurrency key={Object.keys(currency)[0]} currency={currency} />
+  ));
 
   return (
     <section>
-      {!currencyPopular ? <Loading /> : renderCurrencyCrypto()}
+      {currencyPopular.length > 0 ? renderCurrencyCrypto() : <Loading /> }
     </section>
   );
 }
 
 export default Currencys;
-

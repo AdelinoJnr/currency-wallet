@@ -1,3 +1,4 @@
+import React, { useEffect } from 'react';
 import { Route, Switch } from 'react-router-dom';
 
 import { CurrencyProvider } from './store/Currency/currency';
@@ -13,8 +14,13 @@ import Deposit from './pages/Deposit';
 import Withdraw from './pages/Withdraw';
 
 import './styles/global.css';
+import { initUserKey } from './utils/UserLogin';
 
 function App() {
+  useEffect(() => {
+    initUserKey();
+  }, []);
+
   return (
     <CurrencyProvider>
       <Switch>

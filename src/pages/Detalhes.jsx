@@ -12,16 +12,16 @@ import { currencyActivity, updateLocalStorage } from '../utils/functions';
 
 function Detalhes({ match }) {
   const [currency, setCurrency] = useState(false);
-  const [currentValue, setcurrentValue] = useState('')
+  const [currentValue, setcurrentValue] = useState('');
   const { buy } = currency;
   const { id } = match.params;
 
   useEffect(() => {
     const fetchAPI = async () => {
-      setTimeout(async() => {
+      setTimeout(async () => {
         const data = await getCurrencyApiCryptoQuery(id);
         setCurrency(data.ticker);
-      }, 2000)
+      }, 2000);
     };
     fetchAPI();
   }, []);
@@ -29,12 +29,12 @@ function Detalhes({ match }) {
   const renderValueToPayBRL = () => {
     const enteredValue = Number(currentValue);
     const currencyPrice = Number(buy);
-    const result = enteredValue / currencyPrice
+    const result = enteredValue / currencyPrice;
     return (result).toFixed(7);
   };
 
   if (!currency) {
-    return <Loading />
+    return <Loading />;
   }
 
   return (
@@ -50,7 +50,7 @@ function Detalhes({ match }) {
           <p>{Number(buy).toFixed(2)}</p>
         </div>
         <input
-          onChange={ (ev) => setcurrentValue(ev.target.value) }
+          onChange={(ev) => setcurrentValue(ev.target.value)}
           type="number"
           name="valorCurrency"
           value={currentValue}
@@ -60,16 +60,16 @@ function Detalhes({ match }) {
           <p className="amount-to-pay">{`${renderValueToPayBRL()} ${id}`}</p>
         </div>
         <Link
-          onClick={ () => {
+          onClick={() => {
             currencyActivity(Number(currentValue), 'comprar');
             updateLocalStorage('investimentos', {
               code: id,
               buy,
               nome: currencysNames[id],
               currentValue,
-              totalValue: renderValueToPayBRL()
+              totalValue: renderValueToPayBRL(),
             });
-          } }
+          }}
           className="link-btn"
           to="/"
         >

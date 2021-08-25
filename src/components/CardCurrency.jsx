@@ -14,7 +14,7 @@ function CardCurrency({ currency }) {
     const result = currencyBuy - currencyLast;
     const checked = result > 0 ? `+${result.toFixed(2)} R$` : `${result.toFixed(2)} R$`;
     return checked;
-  }
+  };
 
   return (
     <Link to={`/${code[0]}`}>

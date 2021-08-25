@@ -6,16 +6,19 @@ import { getCurrencyApiCryptoQuery } from '../services/requestApi';
 import { converteInNumber } from '../utils/functions';
 
 function Investimentos({ investiment }) {
-  const { buy, code, nome, currentValue, totalValue } = investiment;
+  const {
+    buy, code, nome, currentValue, totalValue,
+  } = investiment;
+
   const [currency, setCurrency] = useState({});
 
   useEffect(() => {
-    const fetchApi = async() => {
-      const data =  await getCurrencyApiCryptoQuery(code);
-      setCurrency(data.ticker)
+    const fetchApi = async () => {
+      const data = await getCurrencyApiCryptoQuery(code);
+      setCurrency(data.ticker);
     };
     fetchApi();
-  }, [])
+  }, []);
 
   const calculateGain = () => {
     const priceCurrency = converteInNumber(currency.buy);

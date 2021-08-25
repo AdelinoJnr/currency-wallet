@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 function HeaderBack({ text, rota }) {
   return (
     <header className="headerback">
-      <Link to={rota} >
+      <Link to={rota}>
         <TiArrowLeftThick className="icon-headerback" />
       </Link>
       <h3 className="text-headerback">{text}</h3>

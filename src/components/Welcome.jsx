@@ -7,7 +7,7 @@ import Obama from '../image/barack_obama.jpg';
 
 function Welcome() {
   const key = localStorage.getItem('user');
-  const {name, elent} = key ? JSON.parse(key) : userDefault;
+  const { name, elent } = key ? JSON.parse(key) : userDefault;
   return (
     <section className="content-welcome">
       <div className="content-user-profile">

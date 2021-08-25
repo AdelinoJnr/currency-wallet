@@ -13,41 +13,28 @@ import { converteInNumber, currencyActivity } from '../utils/functions';
 function Sellcurrency({ match }) {
   const [currency, setCurrency] = useState(false);
   const [currentCurrency, setCurrentCurrency] = useState({});
-  const [quantSell, setQuantSell] = useState('');
   const [checkedInput, setCheckedInput] = useState(false);
   const { id } = match.params;
   const { buy } = currency;
   const { totalValue } = currentCurrency;
 
-
   useEffect(() => {
     const fetchAPI = async () => {
-      const { id } = match.params;
       const data = await getCurrencyApiCryptoQuery(id);
-      setCurrency(data.ticker)
+      setCurrency(data.ticker);
     };
     fetchAPI();
   }, []);
 
   useEffect(() => {
     const updateAtualCurrency = () => {
-      const { id } = match.params;
       const key = localStorage.getItem('investimentos');
       const storage = key ? JSON.parse(key) : [];
       const filter = storage.find((item) => item.code === id);
       setCurrentCurrency(filter);
     };
     updateAtualCurrency();
-  }, [])
-
-  // const handleOnChange = ({ target: { value } }) => {
-  //   const typedInput = converteInNumber(totalValue);
-  //   if (value > typedInput) {
-  //     setQuantSell(typedInput)
-  //   } else {
-  //     setQuantSell(value)
-  //   }
-  // };
+  }, []);
 
   const calculateValueGain = () => {
     const priceCurrency = converteInNumber(buy);
@@ -56,7 +43,7 @@ function Sellcurrency({ match }) {
   };
 
   if (!currency) {
-    return <Loading />
+    return <Loading />;
   }
 
   return (
@@ -73,23 +60,21 @@ function Sellcurrency({ match }) {
             <span>{totalValue}</span>
           </div>
         </div>
-        {/* <input className="input-sell" type="number" name="value" value={ quantSell } onChange={ handleOnChange } /> */}
-        
         <label className="label-info-sell" htmlFor="info">
-          <input onClick={ (ev) => setCheckedInput(ev.target.checked) } type="checkbox" id="info" />
+          <input onClick={(ev) => setCheckedInput(ev.target.checked)} type="checkbox" id="info" />
           Esse processo não pode ser revertido, se você realmente deseja, marque essa opção
         </label>
 
         <p className="value-gain">
-          {checkedInput ? `+ ${calculateValueGain().toFixed(2)} BRL` : `+ 0.00 BRL`}
+          {checkedInput ? `+ ${calculateValueGain().toFixed(2)} BRL` : '+ 0.00 BRL'}
         </p>
 
         <Link to="" className="link-btn">
           <button
-            disabled={ !checkedInput }
+            disabled={!checkedInput}
             className="btn-padrao"
             type="button"
-            onClick={ () => currencyActivity(calculateValueGain(), 'vender', id) }
+            onClick={() => currencyActivity(calculateValueGain(), 'vender', id)}
           >
             Confirmar
           </button>
