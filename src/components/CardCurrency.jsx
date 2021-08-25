@@ -1,37 +1,35 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-function CardCurrency({ currency }) {
-  const {
-    code, codein, name, ask, high,
-  } = currency;
-  const percent = 100 - ((ask * 100) / high);
+import { currencysNames } from '../data';
+import { converteInNumber } from '../utils/functions';
 
-  const renderCurrency = (turismo) => {
-    const currencyName = turismo
-      ? `${name.split('/')[0]}/Turismo`
-      : name.split('/')[0];
-    return (
-      <Link to={`/${code}`}>
-        <section className="content-currency">
-          <div className="nome-currency">
-            <p>{currencyName}</p>
-            <p>{turismo ? 'USDT' : code}</p>
-          </div>
-          <div className="preco-currency">
-            <p>{`R$ ${Number(ask).toFixed(2)}`}</p>
-            <p>{`${percent.toFixed(2)}%`}</p>
-          </div>
-        </section>
-      </Link>
-    );
+function CardCurrency({ currency }) {
+  const code = Object.keys(currency);
+  const { buy, last } = currency[code[0]];
+
+  const calculatePercent = () => {
+    const currencyBuy = converteInNumber(Number(buy).toFixed(2));
+    const currencyLast = converteInNumber(Number(last).toFixed(2));
+    const result = currencyBuy - currencyLast;
+    const checked = result > 0 ? `+${result.toFixed(2)} R$` : `${result.toFixed(2)} R$`;
+    return checked;
   };
 
-  if (codein === 'BRLT') {
-    return renderCurrency(true);
-  }
-
-  return renderCurrency(false);
+  return (
+    <Link to={`/${code[0]}`}>
+      <section className="content-currency">
+        <div className="nome-currency">
+          <p>{currencysNames[code]}</p>
+          <p>{code[0]}</p>
+        </div>
+        <div className="preco-currency">
+          <p>{`R$ ${Number(buy).toFixed(2)}`}</p>
+          <p>{calculatePercent()}</p>
+        </div>
+      </section>
+    </Link>
+  );
 }
 
 export default CardCurrency;

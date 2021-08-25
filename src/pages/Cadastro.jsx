@@ -27,7 +27,8 @@ function Cadastro() {
         <input className="checkbox-termos" type="checkbox" name="termos" id="termos" />
         <span className="text-termos">
           Eu li e e aceito os
-          <Link to="/">Termos e condições</Link>
+          {' '}
+          <Link to="/">Termos e condições </Link>
           de uso!
         </span>
       </label>

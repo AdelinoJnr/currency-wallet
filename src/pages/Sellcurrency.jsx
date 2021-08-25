@@ -5,30 +5,29 @@ import Header from '../components/Header';
 
 import Loading from '../components/Loading';
 import Welcome from '../components/Welcome';
+import { currencysNames } from '../data';
 
-import { getCurrencyApiQuery } from '../services/requestApi';
-import { converteInNumber } from '../utils/functions';
+import { getCurrencyApiCryptoQuery } from '../services/requestApi';
+import { converteInNumber, currencyActivity } from '../utils/functions';
 
 function Sellcurrency({ match }) {
   const [currency, setCurrency] = useState(false);
   const [currentCurrency, setCurrentCurrency] = useState({});
-  const [quantSell, setQuantSell] = useState('');
   const [checkedInput, setCheckedInput] = useState(false);
-  const { name, code, ask } = currency;
-  const { currentValue } = currentCurrency;
+  const { id } = match.params;
+  const { buy } = currency;
+  const { totalValue } = currentCurrency;
 
   useEffect(() => {
     const fetchAPI = async () => {
-      const { id } = match.params;
-      const data = await getCurrencyApiQuery(id);
-      setCurrency(data[0]);
+      const data = await getCurrencyApiCryptoQuery(id);
+      setCurrency(data.ticker);
     };
     fetchAPI();
   }, []);
 
   useEffect(() => {
     const updateAtualCurrency = () => {
-      const { id } = match.params;
       const key = localStorage.getItem('investimentos');
       const storage = key ? JSON.parse(key) : [];
       const filter = storage.find((item) => item.code === id);
@@ -37,19 +36,10 @@ function Sellcurrency({ match }) {
     updateAtualCurrency();
   }, []);
 
-  const handleOnChange = ({ target: { value } }) => {
-    const typedInput = converteInNumber(currentValue);
-    if (value > typedInput) {
-      setQuantSell(typedInput);
-    } else {
-      setQuantSell(value);
-    }
-  };
-
   const calculateValueGain = () => {
-    const priceCurrency = converteInNumber(ask);
-    const total = quantSell * priceCurrency;
-    return `+ ${total.toFixed(2)}`;
+    const priceCurrency = converteInNumber(buy);
+    const total = totalValue * priceCurrency;
+    return total;
   };
 
   if (!currency) {
@@ -64,20 +54,30 @@ function Sellcurrency({ match }) {
       <h3 className="title-login">Vender</h3>
       <section className="content-sell-currency">
         <div className="content-info">
-          <h2>{name.split('/')[0]}</h2>
+          <h2>{currencysNames[id]}</h2>
           <div className="content-sell-value">
-            <span>{code}</span>
-            <span>{currentValue}</span>
+            <span>{id}</span>
+            <span>{totalValue}</span>
           </div>
         </div>
-        <input className="input-sell" type="number" name="value" value={quantSell} onChange={handleOnChange} />
-        <p className="value-gain">{calculateValueGain()}</p>
         <label className="label-info-sell" htmlFor="info">
           <input onClick={(ev) => setCheckedInput(ev.target.checked)} type="checkbox" id="info" />
           Esse processo não pode ser revertido, se você realmente deseja, marque essa opção
         </label>
+
+        <p className="value-gain">
+          {checkedInput ? `+ ${calculateValueGain().toFixed(2)} BRL` : '+ 0.00 BRL'}
+        </p>
+
         <Link to="" className="link-btn">
-          <button disabled={!checkedInput} className="btn-padrao" type="button">Confirmar</button>
+          <button
+            disabled={!checkedInput}
+            className="btn-padrao"
+            type="button"
+            onClick={() => currencyActivity(calculateValueGain(), 'vender', id)}
+          >
+            Confirmar
+          </button>
         </Link>
       </section>
       <Footer />
