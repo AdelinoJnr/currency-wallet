@@ -180,3 +180,23 @@
   text-align: center;
   width: 100%;
 }
+
+/* Header para voltar */
+.headerback {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  padding: 10px;
+  height: 30px;
+  background-color: #13111df3;
+}
+
+.text-headerback {
+  font-size: 1.8em;
+}
+
+.icon-headerback {
+  width: 25px;
+  height: 25px;
+}
