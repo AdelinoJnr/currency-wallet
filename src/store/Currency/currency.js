@@ -1,4 +1,4 @@
-import { createContext, useState, useEffect } from 'react';
+import React, { createContext, useState, useEffect } from 'react';
 import { getCurrencyApiCrypto, getCurrencyCryptoPopular } from '../../services/requestApi';
 
 export const CurrencyContext = createContext();
@@ -13,17 +13,17 @@ export function CurrencyProvider({ children }) {
       setCurrencyCrypto(data);
     };
     fetchApi();
-  }, [])
+  }, []);
 
   useEffect(() => {
     const fetchApi = async () => {
-      setTimeout(async() => {
+      setTimeout(async () => {
         const data = await getCurrencyCryptoPopular();
         setCurrencyPopular(data);
-      }, 3000)
+      }, 2000);
     };
     fetchApi();
-  }, [])
+  }, []);
 
   return (
     <CurrencyContext.Provider value={{ currencyPopular, currencyCrypto }}>

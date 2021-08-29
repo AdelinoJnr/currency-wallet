@@ -16,42 +16,30 @@ export const getCurrencyApiQuery = async (query) => {
 // Api Mercado BitCoins
 
 export const getCurrencyApiCrypto = async () => {
-  let array = [];
-  // currencys.forEach((currency) => {
-  //   const request = fetch(`https://www.mercadobitcoin.net/api/${currency}/ticker/`).then((response) => response.json())
-  //   array.push(request);
-  // })
-  // const data = await Promise.all(array)
-  // return data;
-  for(let index = 0; index < currencys.length; index += 1) {
-    const request = await fetch(`https://www.mercadobitcoin.net/api/${currencys[index]}/ticker/`);
+  const array = [];
+  currencys.forEach(async (currency) => {
+    const request = await fetch(`https://www.mercadobitcoin.net/api/${currency}/ticker/`);
     const data = await request.json();
     const myObj = {
-      [currencys[index]]: data.ticker,
-    }
-    array.push(myObj)
-  }
+      [currency]: data.ticker,
+    };
+    array.push(myObj);
+  });
   return array;
 };
 
-const currencysPopular = ['BTC', 'ETH', 'XRP', 'LTC', 'BCH', 'AAVE']
+const currencysPopular = ['BTC', 'ETH', 'XRP', 'LTC', 'BCH', 'AAVE'];
 
 export const getCurrencyCryptoPopular = async () => {
-  let array = [];
-  // currencys.forEach((currency) => {
-  //   const request = fetch(`https://www.mercadobitcoin.net/api/${currency}/ticker/`).then((response) => response.json())
-  //   array.push(request);
-  // })
-  // const data = await Promise.all(array)
-  // return data;
-  for(let index = 0; index < currencysPopular.length; index += 1) {
-    const request = await fetch(`https://www.mercadobitcoin.net/api/${currencysPopular[index]}/ticker/`);
+  const array = [];
+  currencysPopular.forEach(async (currency) => {
+    const request = await fetch(`https://www.mercadobitcoin.net/api/${currency}/ticker/`);
     const data = await request.json();
     const myObj = {
-      [currencysPopular[index]]: data.ticker,
-    }
-    array.push(myObj)
-  }
+      [currency]: data.ticker,
+    };
+    array.push(myObj);
+  });
   return array;
 };
 

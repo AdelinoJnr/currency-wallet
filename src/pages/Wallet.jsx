@@ -1,4 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import Footer from '../components/Footer';
 import Header from '../components/Header';
 import Loading from '../components/Loading';
@@ -26,9 +27,9 @@ function Wallet() {
       return acc + totalPrice;
     }, 0);
     const data = calculateBalanceValues(storage);
-    const result = Number(lucroCurrent).toFixed(2)
+    const result = Number(lucroCurrent).toFixed(2);
     const calculate = Number(result) - data;
-    const total = calculate >= 0 ? `+${calculate.toFixed(2)}` : calculate.toFixed(2); 
+    const total = calculate >= 0 ? `+${calculate.toFixed(2)}` : calculate.toFixed(2);
     setLucro(total);
     setTotalBalance(data.toFixed(2));
   };
@@ -37,14 +38,11 @@ function Wallet() {
     updateBalance();
   }, []);
 
-  const renderInvestments = () => {
-    const storage = key ? JSON.parse(key) : [];
-    return (
-      <section className="main-investimentos">
-        {storage.map((item, index)=> <Investimentos key={ index } investiment={item} />)}
-      </section>
-    );
-  };
+  const renderInvestments = () => (
+    <section className="main-investimentos">
+      {storage.map((item) => <Investimentos key={item.code} investiment={item} />)}
+    </section>
+  );
 
   if (!currencyCrypto) {
     return <Loading />;
@@ -57,12 +55,16 @@ function Wallet() {
       <Welcome />
       <h3 className="title-login">Carteira</h3>
       <div>
-        <button type="button" className="btn-padrao btn-ladoalado btn-exit">
-          Depositar
-        </button>
-        <button type="button" className="btn-padrao btn-ladoalado">
-          Retirar
-        </button>
+        <Link to="/depositar">
+          <button type="button" className="btn-padrao btn-ladoalado btn-exit">
+            Depositar
+          </button>
+        </Link>
+        <Link to="/saque">
+          <button type="button" className="btn-padrao btn-ladoalado">
+            Retirar
+          </button>
+        </Link>
       </div>
       <section>
         <div className="content-balance">
@@ -70,7 +72,7 @@ function Wallet() {
           <span>{`${lucro} BRL`}</span>
           <p>{`${totalBalance} BRL`}</p>
         </div>
-      {renderInvestments()}
+        {renderInvestments()}
       </section>
       <Footer />
     </>

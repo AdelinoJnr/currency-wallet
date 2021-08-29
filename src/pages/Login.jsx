@@ -37,19 +37,19 @@ function Login() {
       </div>
 
       <Link className="login-efect" to="/">
-        <button type="button" className="btn-padrao" >
+        <button type="button" className="btn-padrao">
           Entrar
         </button>
       </Link>
 
       <div className="content-or-rede-social">
-        <hr/>
+        <hr />
         <span>or</span>
-        <hr/>
+        <hr />
       </div>
 
       <button className="btn-padrao btn-google" type="button">
-        <FcGoogle className="icon-social"/>
+        <FcGoogle className="icon-social" />
         Continuar com Google
       </button>
       <button className="btn-padrao btn-facebook" type="button">
@@ -57,7 +57,10 @@ function Login() {
         Continuar com Facebook
       </button>
 
-      <span className="register">Ainda nao tem cadastro? <Link className="link-register" to="/cadastro">sign up</Link></span>
+      <span className="register">
+        Ainda nao tem cadastro?
+        <Link className="link-register" to="/cadastro">sign up</Link>
+      </span>
     </main>
   );
 }
