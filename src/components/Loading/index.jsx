@@ -1,5 +1,7 @@
 import React from 'react';
-import GifGoku from '../image/goku-correndo.gif';
+import GifGoku from '../../image/goku-correndo.gif';
+
+import './style.css';
 
 function Loading() {
   return (

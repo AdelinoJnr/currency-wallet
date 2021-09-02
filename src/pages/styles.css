@@ -2,11 +2,13 @@
 .content-perfil {
   margin-top: 80px;
   display: flex;
+  justify-content: center;
+  margin-right: 25px;
 }
 
 .img-user-perfil {
-  width: 140px;
-  height: 140px;
+  width: 120px;
+  height: 120px;
   background-size: cover;
   border-radius: 50%;
   margin-left: 20px;
@@ -26,42 +28,65 @@
   font-size: 1.6em;
 }
 
-.btn-padrao {
-  margin: 10px;
-  text-align: center;
-  height: 30px;
-  border-radius: 20px;
-  border: none;
-  width: 90%;
-  color: white;
-  background-color: #147014;
+.btn-historic {
+  background-color: var(--blue-color-600);
+  margin: 85px 0 20px;
 }
 
 .btn-exit {
-  background-color: #9b0a0a;
-}
-
-.btn-ladoalado {
-  width: 44%;
+  background-color: var(--pink-color-600);
 }
 
 .content-btn-perfil {
-  margin-top: 50px;
+  text-align: center;
 }
 
 /* Wallet */
 .content-balance {
-  display: flex;
-  justify-content: space-between;
   align-items: center;
-  background-color: #3a3461;
-  width: 90%;
-  height: 40px;
-  margin: 60px auto;
+  margin: 40px auto 40px;
+  background-color: var(--black-color-800);
+  width: 300px;
+  height: 60px;
   padding: 10px;
   border-radius: 10px;
   font-size: 1.2em;
-  color: white;
+  color: var(--texts-inputs-200);
+}
+
+.content-balance > div {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px;
+}
+
+.content-balance > div > p {
+  font-size: 1.2em;
+  color: var(--texts-inputs-200);
+}
+
+.total-investiments {
+  color: var(--blue-purple-color-600);
+}
+
+.btn-depositar {
+  background-color: var(--blue-color-600);
+}
+
+.btn-sacar {
+  background-color: var(--pink-color-600);
+}
+
+.content-btn-atividades-user {
+  display: flex;
+  justify-content: space-between;
+  margin: 30px 20px;
+}
+
+.title-investimentos {
+  text-align: center;
+  color: var(--blue-color-600);
+  margin-bottom: 30px;
 }
 
 /* Login */

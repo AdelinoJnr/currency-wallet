@@ -1,8 +1,8 @@
 import React, { useContext } from 'react';
-import { CurrencyContext } from '../store/Currency/currency';
+import { CurrencyContext } from '../../store/Currency/currency';
 
-import CardCurrency from './CardCurrency';
-import Loading from './Loading';
+import CardCurrency from '../CardCurrency';
+import Loading from '../Loading';
 
 function Currencys() {
   const { currencyPopular } = useContext(CurrencyContext);

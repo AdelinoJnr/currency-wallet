@@ -1,13 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import { RiMoneyDollarCircleFill } from 'react-icons/ri';
 import { Link } from 'react-router-dom';
-import { getCurrencyApiCryptoQuery } from '../services/requestApi';
+import { getCurrencyApiCryptoQuery } from '../../services/requestApi';
 
-import { converteInNumber } from '../utils/functions';
+import { converteInNumber } from '../../utils/functions';
+
+import './style.css';
 
 function Investimentos({ investiment }) {
   const {
-    buy, code, nome, currentValue, totalValue,
+    code, nome, currentValue, totalValue,
   } = investiment;
 
   const [currency, setCurrency] = useState({});
@@ -26,24 +28,24 @@ function Investimentos({ investiment }) {
     const totalPay = converteInNumber(totalValue);
     const result = priceCurrency * totalPay - pricePay;
     if (result >= 0) {
-      return `+${result.toFixed(2)}`;
+      return <span className="valor-positivo">{`+ R$ ${result.toFixed(2)}`}</span>;
     }
-    return result.toFixed(2);
+    return (
+      <span className="valor-negativo">
+        {`- R$ ${Math.abs(result.toFixed(2))}`}
+      </span>
+    );
   };
 
   return (
     <div className="content-investiments">
       <div className="content-info-currency">
         <p>{nome}</p>
-        <div className="content-code-currency">
-          <span>{code}</span>
-          <span>{Number(buy).toFixed(2)}</span>
-        </div>
+        <span>{`${code} ${totalValue}`}</span>
       </div>
       <div className="content-value-prices">
-        <p>{`${totalValue} ${code}`}</p>
-        <p>{`${Number(currentValue).toFixed(2)} BRL`}</p>
-        <span>{`${calculateGain()} BRL`}</span>
+        <p>{`R$ ${Number(currentValue).toFixed(2)}`}</p>
+        {calculateGain()}
       </div>
       <Link to={`/wallet/sell/${code}`}>
         <RiMoneyDollarCircleFill className="icon-investimentos" />

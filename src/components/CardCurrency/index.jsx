@@ -1,8 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import { currencysNames } from '../data';
-import { converteInNumber } from '../utils/functions';
+import { currencysNames } from '../../data';
+import { converteInNumber } from '../../utils/functions';
+
+import './style.css';
 
 function CardCurrency({ currency }) {
   const code = Object.keys(currency);

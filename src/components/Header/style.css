@@ -1,0 +1,25 @@
+/* Css Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 50px;
+  background-color: var(--black-color-800);
+  color: var(--texts-inputs-400);
+}
+
+.content-logo > span {
+  font-family: Cabin, sans-serif;
+  font-size: 2.2em;
+  margin-left: 20px;
+  font-weight: 600;
+}
+
+.icon-hamb {
+  width: 25px;
+  height: 25px;
+  margin-right: 20px;
+  color: var(--blue-color-600);
+}
+  

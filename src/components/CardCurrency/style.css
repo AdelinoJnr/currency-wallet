@@ -1,0 +1,17 @@
+/* Css CardCurrency */
+.content-currency {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20px;
+  align-items: center;
+  background-color: #13111D;
+  color: white;
+  margin: 20px;
+  border-radius: 10px;
+  height: 60px;
+  font-size: 1.2em;
+}
+
+.preco-currency {
+  text-align: right;
+}

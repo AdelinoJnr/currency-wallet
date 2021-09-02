@@ -1,0 +1,31 @@
+/* Css Footer */
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: var(--black-color-800);
+}
+
+.content-footer {
+  height: 50px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.icons-footer {
+  width: 25px;
+  height: 25px;
+  margin-top: 2px;
+  color: var(--blue-color-600);
+}
+
+.icon-user {
+  margin-left: 20px;
+}
+
+.icon-wallet {
+  margin-right: 20px;
+}

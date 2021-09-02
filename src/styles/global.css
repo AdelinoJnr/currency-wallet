@@ -1,3 +1,28 @@
+:root {
+
+  --back-ground-600: rgb(37, 37, 49);
+
+  --black-color-800: rgb(19, 17, 29);
+
+  --purple-color-600: rgb(158, 104, 217);
+  
+  --blue-purple-color-600: rgb(133, 109, 227);
+  
+  --blue-color-600: rgb(108, 114, 205);
+  
+  --pink-color-600: rgb(203, 105, 193);
+  
+  --green-color-600: rgb(39, 143, 36);
+
+  --red-color-600: rgb(146, 7, 7);
+
+  --texts-inputs-600: rgb(152, 152, 152);
+  
+  --texts-inputs-400: rgb(227, 227, 227);
+
+  --texts-inputs-200: rgb(243, 243, 243);
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -9,32 +34,31 @@ body {
   font-size: 10px;
 }
 
-:root {
-
-  --back-ground-600: rgb(37, 37, 49);
-
-  --purple-color-600: rgb(158, 104, 217);
-  
-  --blue-purple-color-600: rgb(133, 109, 227);
-  
-  --blue-color-600: rgb(108, 114, 205);
-  
-  --pink-color-600: rgb(203, 105, 193);
-  
-  --green-color-600: rgb(2, 117, 2);
-
-  --red-color-600: rgb(146, 7, 7);
-
-  --texts-inputs-600: rgb(152, 152, 152);
-  
-  --texts-inputs-400: rgb(227, 227, 227);
-
-}
-
 a {
   text-decoration: none;
 }
 
 *:focus {
   outline: none;
+}
+
+.btn {
+  width: 321px;
+  height: 30px;
+  border-radius: 15px;
+  border: none;
+  color: var(--texts-inputs-200);
+}
+
+.btn-metade { 
+  width: 140px;
+  height: 30px;
+  border-radius: 15px;
+  border: none;
+  color: var(--texts-inputs-200);
+}
+
+.title-3 {
+  font-size: 2em;
+  font-weight: 400;
 }
