@@ -31,16 +31,14 @@ export const getCurrencyApiCrypto = async () => {
 const currencysPopular = ['BTC', 'ETH', 'XRP', 'LTC', 'BCH', 'AAVE'];
 
 export const getCurrencyCryptoPopular = async () => {
-  const array = [];
-  currencysPopular.forEach(async (currency) => {
+  const array = currencysPopular.map(async (currency) => {
     const request = await fetch(`https://www.mercadobitcoin.net/api/${currency}/ticker/`);
     const data = await request.json();
-    const myObj = {
+    return {
       [currency]: data.ticker,
     };
-    array.push(myObj);
   });
-  return array;
+  return Promise.all(array);
 };
 
 export const getCurrencyApiCryptoQuery = async (query) => {

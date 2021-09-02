@@ -9,15 +9,32 @@ body {
   font-size: 10px;
 }
 
+:root {
+
+  --back-ground-600: rgb(37, 37, 49);
+
+  --purple-color-600: rgb(158, 104, 217);
+  
+  --blue-purple-color-600: rgb(133, 109, 227);
+  
+  --blue-color-600: rgb(108, 114, 205);
+  
+  --pink-color-600: rgb(203, 105, 193);
+  
+  --green-color-600: rgb(2, 117, 2);
+
+  --red-color-600: rgb(146, 7, 7);
+
+  --texts-inputs-600: rgb(152, 152, 152);
+  
+  --texts-inputs-400: rgb(227, 227, 227);
+
+}
+
 a {
   text-decoration: none;
-  color: #b118a4;
 }
 
 *:focus {
   outline: none;
-}
-
-button:disabled {
-  background-color: #6f952ad8;
 }
