@@ -1,4 +1,6 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import { currencyActivity } from '../../utils/functions';
 
 import './style.css';
 
@@ -15,6 +17,13 @@ function FormDeposit({ value }) {
       <select name="parcela">
         <option value="1x">{`1x - R$ ${value}`}</option>
       </select>
+      <div className="link-deposit">
+        <Link to="/">
+          <button className="btn-acao btn-deposit" onClick={() => currencyActivity(value, 'adicionar')} type="button">
+            Confirmar
+          </button>
+        </Link>
+      </div>
     </form>
   );
 }
