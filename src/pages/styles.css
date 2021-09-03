@@ -488,6 +488,10 @@
   font-size: 1.6em;
 }
 
+.btn-saque:disabled {
+  background-color: var(--blue-color-400);
+}
+
 .content-btn {
   width: 240px;
   margin: 30px auto 0;

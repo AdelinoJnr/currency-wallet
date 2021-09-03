@@ -72,6 +72,17 @@ export const validadeGereneteCartao = (name, cvv, vencimento, conta) => {
   if (name.length < 10) return false;
   if (cvv.length !== 3) return false;
   if (!vencimento) return false;
-  if (conta.length < 8) return false;
+  if (conta.length < 6) return false;
+  return true;
+};
+
+export const validadeSaque = (value, conta, name, email, phone) => {
+  const emailValidator = /^[\S.]+@[a-z]+\.\w{2,3}$/g.test(email);
+
+  if (Number(value) <= 0) return false;
+  if (conta.length < 6) return false;
+  if (name.length < 10) return false;
+  if (!emailValidator) return false;
+  if (phone.length < 10) return false;
   return true;
 };
