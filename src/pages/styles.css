@@ -282,6 +282,11 @@
   margin-top: 30px;
 }
 
+.content-avatares > img {
+  margin: 10px 5px;
+  width: 45px;
+}
+
 /* Detalhes */
 .content-pay-currency {
   color: var(--texts-inputs-200);
