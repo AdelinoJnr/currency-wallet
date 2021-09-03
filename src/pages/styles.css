@@ -357,6 +357,10 @@
   font-family: Poppins;
 }
 
+.btn-comprar:disabled {
+  background-color: var(--blue-color-400);
+}
+
 /* Sell Currency */
 .content-sell-currency {
   width: 100%;

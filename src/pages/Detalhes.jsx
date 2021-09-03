@@ -78,7 +78,7 @@ function Detalhes({ match }) {
           className="link-btn"
           to="/"
         >
-          <button type="button" className="btn-acao btn-comprar">Comprar</button>
+          <button disabled={currentValue === ''} type="button" className="btn-acao btn-comprar">Comprar</button>
         </Link>
       </section>
       <Footer />
