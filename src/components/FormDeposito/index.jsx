@@ -17,8 +17,8 @@ function FormDeposit({ value }) {
       <select name="parcela">
         <option value="1x">{`1x - R$ ${value}`}</option>
       </select>
-      <div className="link-deposit">
-        <Link to="/">
+      <div>
+        <Link className="link-deposit" to="/">
           <button className="btn-acao btn-deposit" onClick={() => currencyActivity(value, 'adicionar')} type="button">
             Confirmar
           </button>

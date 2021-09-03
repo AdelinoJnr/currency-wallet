@@ -449,15 +449,18 @@
   margin: 5px 5px;
 }
 
-.btn-cartao {
+.btn-pix:active,
+.btn-pix:hover,
+.btn-boleto:active,
+.btn-boleto:hover,
+.btn-cartao:active,
+.btn-cartao:hover {
   background-color: var(--blue-color-600);
-  font-family: Poppins;
-  font-size: 1.4em;
-  color: var(--texts-inputs-200);
 }
 
 .btn-pix,
-.btn-boleto {
+.btn-boleto,
+.btn-cartao {
   background-color: var(--pink-color-600);
   font-family: Poppins;
   font-size: 1.4em;

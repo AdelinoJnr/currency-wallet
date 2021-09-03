@@ -1,3 +1,5 @@
+const codigo = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789'.split('');
+
 export const updateLocalStorage = (key, value) => {
   const chave = localStorage.getItem(key);
   const checkedStorage = chave ? JSON.parse(chave) : false;
@@ -45,4 +47,13 @@ export const currencyActivity = (valor, condicao, code) => {
     elent: currencyUser.toFixed(2),
   };
   localStorage.setItem('user', JSON.stringify(user));
+};
+
+export const randomCodigoPix = (length) => {
+  const token = [];
+  for (let index = 0; index < length; index += 1) {
+    const randomIndex = (Math.random() * (codigo.length - 1)).toFixed(0);
+    token[index] = codigo[randomIndex];
+  }
+  return token.join('');
 };

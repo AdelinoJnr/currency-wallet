@@ -1,12 +1,10 @@
 import React, { useState } from 'react';
 
-import { Link } from 'react-router-dom';
 import HeaderBack from '../components/HeaderBack';
 import Footer from '../components/Footer';
 import FormDeposit from '../components/FormDeposito';
 import FormBoleto from '../components/FormBoleto';
-
-import { currencyActivity } from '../utils/functions';
+import FormPix from '../components/FormPix';
 
 function Deposit() {
   const [valueDeposit, setValueDeposit] = useState('');
@@ -17,7 +15,7 @@ function Deposit() {
   const renderForm = () => {
     if (metodoPagement === 'Cartao') return <FormDeposit value={valueDeposit} />;
     if (metodoPagement === 'Boleto') return <FormBoleto value={valueDeposit} />;
-    return <p>Ola</p>;
+    if (metodoPagement === 'Pix') return <FormPix value={valueDeposit} />;
   };
 
   return (
@@ -35,15 +33,6 @@ function Deposit() {
           <button onClick={handleClick} className="btn-pix" type="button">Pix</button>
         </div>
         {renderForm()}
-        {metodoPagement !== '' && (
-          <div className="link-deposit">
-            <Link to="/">
-              <button className="btn-acao btn-deposit" onClick={() => currencyActivity(valueDeposit, 'adicionar')} type="button">
-                Confirmar
-              </button>
-            </Link>
-          </div>
-        )}
       </section>
       <Footer />
     </>
