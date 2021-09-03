@@ -410,6 +410,10 @@
   font-size: 1.6em;
 }
 
+.btn-deposit:disabled {
+  background-color: var(--blue-color-400);
+}
+
 .content-deposit {
   margin: 50px auto 30px;
   width: 190px;

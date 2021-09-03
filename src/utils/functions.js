@@ -57,3 +57,13 @@ export const randomCodigoPix = (length) => {
   }
   return token.join('');
 };
+
+export const validadeGereneteBolet = (name, email, cpf, phone) => {
+  const emailValidator = /^[\S.]+@[a-z]+\.\w{2,3}$/g.test(email);
+
+  if (name.length < 10) return false;
+  if (!emailValidator) return false;
+  if (cpf.length < 11) return false;
+  if (phone.length < 10) return false;
+  return true;
+};
