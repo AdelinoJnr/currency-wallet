@@ -38,6 +38,7 @@ body {
 
 a {
   text-decoration: none;
+  color: var(--pink-color-600);
 }
 
 *:focus {
