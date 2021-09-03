@@ -375,3 +375,65 @@
 .content-form-pagament {
   color: white;
 }
+
+/* Sacar */
+.btn-saque {
+  background-color: var(--blue-color-600);
+  font-family: Poppins;
+  font-size: 1.6em;
+}
+
+.content-btn {
+  width: 240px;
+  margin: 30px auto 0;
+}
+
+.content-saque {
+  margin: 50px auto 35px;
+  color: var(--texts-inputs-400);
+  width: 190px;
+}
+
+.content-saque > input {
+  width: 180px;
+  height: 30px;
+  border-radius: 15px;
+  border: none;
+  text-align: center;
+  font-size: 1.6em;
+  font-family: Cabin;
+  font-weight: 600;
+  background-color: var(--texts-inputs-200);
+}
+
+.content-saque > p {
+  font-size: 1.6em;
+  margin-bottom: 5px;
+}
+
+.form-sacar {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-sacar > h4 {
+  color: var(--texts-inputs-400);
+}
+
+.form-sacar > input {
+  width: 320px;
+  height: 30px;
+  border-radius: 15px;
+  border: none;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.form-sacar > select {
+  width: 240px;
+  height: 30px;
+  border-radius: 7px;
+  border: none;
+  margin: 0 auto;
+}

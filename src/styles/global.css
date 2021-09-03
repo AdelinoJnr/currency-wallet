@@ -71,4 +71,9 @@ a {
 .title-3 {
   font-size: 2em;
   font-weight: 400;
+  text-align: center;
+}
+
+input {
+  color: #252531;
 }
