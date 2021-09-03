@@ -28,7 +28,7 @@ export const getCurrencyApiCrypto = async () => {
   return array;
 };
 
-const currencysPopular = ['BTC', 'ETH', 'XRP', 'LTC', 'BCH', 'AAVE'];
+const currencysPopular = ['BTC', 'ETH', 'LTC', 'BCH', 'AAVE'];
 
 export const getCurrencyCryptoPopular = async () => {
   const array = currencysPopular.map(async (currency) => {

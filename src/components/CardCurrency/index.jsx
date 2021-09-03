@@ -14,20 +14,25 @@ function CardCurrency({ currency }) {
     const currencyBuy = converteInNumber(Number(buy).toFixed(2));
     const currencyLast = converteInNumber(Number(last).toFixed(2));
     const result = currencyBuy - currencyLast;
-    const checked = result > 0 ? `+${result.toFixed(2)} R$` : `${result.toFixed(2)} R$`;
-    return checked;
+    if (result < 0) {
+      return (
+        <span className="valor-negativo">
+          {`- R$ ${Math.abs(Number(result).toFixed(2))}`}
+        </span>
+      );
+    }
+    return (
+      <span className="valor-positivo">{`+ R$ ${Number(result).toFixed(2)}`}</span>
+    );
   };
 
   return (
-    <Link to={`/${code[0]}`}>
+    <Link className="link-currency-detalhes" to={`/${code[0]}`}>
       <section className="content-currency">
-        <div className="nome-currency">
-          <p>{currencysNames[code]}</p>
-          <p>{code[0]}</p>
-        </div>
+        <p>{`${currencysNames[code]} - ${code[0]}`}</p>
         <div className="preco-currency">
           <p>{`R$ ${Number(buy).toFixed(2)}`}</p>
-          <p>{calculatePercent()}</p>
+          {calculatePercent()}
         </div>
       </section>
     </Link>
