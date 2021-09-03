@@ -31,10 +31,14 @@
 .btn-historic {
   background-color: var(--blue-color-600);
   margin: 85px 0 20px;
+  font-family: Poppins;
+  font-size: 1.6em;
 }
 
 .btn-exit {
   background-color: var(--pink-color-600);
+  font-family: Poppins;
+  font-size: 1.6em;
 }
 
 .content-btn-perfil {

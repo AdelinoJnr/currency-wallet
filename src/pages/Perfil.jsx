@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Footer from '../components/Footer';
 import Header from '../components/Header';
 import Welcome from '../components/Welcome';
@@ -22,9 +23,15 @@ function Perfil() {
           <button className="btn btn-historic" type="button">
             Historico de compras
           </button>
-          <button className="btn btn-exit" type="button">
-            Sair
-          </button>
+          <Link to="/login">
+            <button
+              className="btn btn-exit"
+              type="button"
+              onClick={() => localStorage.removeItem('user')}
+            >
+              Sair
+            </button>
+          </Link>
         </section>
       </section>
       <Footer />
