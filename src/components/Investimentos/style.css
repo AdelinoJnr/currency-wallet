@@ -15,6 +15,7 @@
   color: var(--texts-inputs-200);
   background-color: var(--black-color-800);
   border-radius: 10px;
+  font-size: 1.1em;
 }
 
 .content-value-prices {
@@ -29,6 +30,11 @@
 
 .content-info-currency {
   width: 120px;
+}
+
+.content-info-currency > p,
+.content-value-prices > p {
+  font-size: 1.1em;
 }
 
 .content-info-currency > span { 
