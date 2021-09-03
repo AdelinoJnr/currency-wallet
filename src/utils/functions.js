@@ -67,3 +67,11 @@ export const validadeGereneteBolet = (name, email, cpf, phone) => {
   if (phone.length < 10) return false;
   return true;
 };
+
+export const validadeGereneteCartao = (name, cvv, vencimento, conta) => {
+  if (name.length < 10) return false;
+  if (cvv.length !== 3) return false;
+  if (!vencimento) return false;
+  if (conta.length < 8) return false;
+  return true;
+};
