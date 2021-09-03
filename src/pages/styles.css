@@ -235,7 +235,7 @@
   text-align: center;
   width: 140px;
   height: 15px;
-  font-size: 1.5em;
+  font-size: 1.4em;
   font-weight: 600;
   font-family: Cabin;
 }
@@ -243,7 +243,7 @@
 .content-full-name {
   display: flex;
   margin-top: 25px;
-  width: 95%;
+  width: 340px;
   justify-content: space-between;
 }
 
@@ -277,18 +277,6 @@
 .link-cadastrar-btn {
   width: 100%;
   text-align: center;
-}
-
-.btn-cadastrar {
-  font-size: 1.6em;
-  font-family: Poppins;
-  background-color: var(--blue-color-600);
-  margin-top: 30px;
-}
-
-.content-avatares > img {
-  margin: 10px 5px;
-  width: 45px;
 }
 
 /* Detalhes */
