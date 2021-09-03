@@ -1,3 +1,5 @@
+const codigo = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789'.split('');
+
 export const updateLocalStorage = (key, value) => {
   const chave = localStorage.getItem(key);
   const checkedStorage = chave ? JSON.parse(chave) : false;
@@ -45,4 +47,42 @@ export const currencyActivity = (valor, condicao, code) => {
     elent: currencyUser.toFixed(2),
   };
   localStorage.setItem('user', JSON.stringify(user));
+};
+
+export const randomCodigoPix = (length) => {
+  const token = [];
+  for (let index = 0; index < length; index += 1) {
+    const randomIndex = (Math.random() * (codigo.length - 1)).toFixed(0);
+    token[index] = codigo[randomIndex];
+  }
+  return token.join('');
+};
+
+export const validadeGereneteBolet = (name, email, cpf, phone) => {
+  const emailValidator = /^[\S.]+@[a-z]+\.\w{2,3}$/g.test(email);
+
+  if (name.length < 10) return false;
+  if (!emailValidator) return false;
+  if (cpf.length < 11) return false;
+  if (phone.length < 10) return false;
+  return true;
+};
+
+export const validadeGereneteCartao = (name, cvv, vencimento, conta) => {
+  if (name.length < 10) return false;
+  if (cvv.length !== 3) return false;
+  if (!vencimento) return false;
+  if (conta.length < 6) return false;
+  return true;
+};
+
+export const validadeSaque = (value, conta, name, email, phone) => {
+  const emailValidator = /^[\S.]+@[a-z]+\.\w{2,3}$/g.test(email);
+
+  if (Number(value) <= 0) return false;
+  if (conta.length < 6) return false;
+  if (name.length < 10) return false;
+  if (!emailValidator) return false;
+  if (phone.length < 10) return false;
+  return true;
 };

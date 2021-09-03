@@ -1,0 +1,59 @@
+/* Investimentos */
+.main-investimentos {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.content-investiments {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 50px;
+  margin: 0 20px;
+  color: var(--texts-inputs-200);
+  background-color: var(--black-color-800);
+  border-radius: 10px;
+  font-size: 1.1em;
+}
+
+.content-value-prices {
+  text-align: right;
+}
+
+.icon-investimentos {
+  width: 30px;
+  height: 30px;
+  color: var(--green-color-600);
+}
+
+.content-info-currency {
+  width: 120px;
+}
+
+.content-info-currency > p,
+.content-value-prices > p {
+  font-size: 1.1em;
+}
+
+.content-info-currency > span { 
+  color: var(--pink-color-600);
+}
+
+.valor-negativo {
+  color: var(--red-color-600);
+}
+
+.valor-positivo {
+  color: var(--green-color-600);
+}
+
+.link-btn {
+  text-align: center;
+  width: 100%;
+}
+
+.content-investiments:last-child {
+  margin-bottom: 70px;
+}

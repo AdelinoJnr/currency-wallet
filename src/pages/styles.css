@@ -2,11 +2,13 @@
 .content-perfil {
   margin-top: 80px;
   display: flex;
+  justify-content: center;
+  margin-right: 25px;
 }
 
 .img-user-perfil {
-  width: 140px;
-  height: 140px;
+  width: 120px;
+  height: 120px;
   background-size: cover;
   border-radius: 50%;
   margin-left: 20px;
@@ -26,42 +28,69 @@
   font-size: 1.6em;
 }
 
-.btn-padrao {
-  margin: 10px;
-  text-align: center;
-  height: 30px;
-  border-radius: 20px;
-  border: none;
-  width: 90%;
-  color: white;
-  background-color: #147014;
+.btn-historic {
+  background-color: var(--blue-color-600);
+  margin: 85px 0 20px;
+  font-family: Poppins;
+  font-size: 1.6em;
 }
 
 .btn-exit {
-  background-color: #9b0a0a;
-}
-
-.btn-ladoalado {
-  width: 44%;
+  background-color: var(--pink-color-600);
+  font-family: Poppins;
+  font-size: 1.6em;
 }
 
 .content-btn-perfil {
-  margin-top: 50px;
+  text-align: center;
 }
 
 /* Wallet */
 .content-balance {
-  display: flex;
-  justify-content: space-between;
   align-items: center;
-  background-color: #3a3461;
-  width: 90%;
-  height: 40px;
-  margin: 60px auto;
+  margin: 40px auto 40px;
+  background-color: var(--black-color-800);
+  width: 300px;
+  height: 60px;
   padding: 10px;
   border-radius: 10px;
   font-size: 1.2em;
-  color: white;
+  color: var(--texts-inputs-200);
+}
+
+.content-balance > div {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px;
+}
+
+.content-balance > div > p {
+  font-size: 1.2em;
+  color: var(--texts-inputs-200);
+}
+
+.total-investiments {
+  color: var(--blue-purple-color-600);
+}
+
+.btn-depositar {
+  background-color: var(--blue-color-600);
+}
+
+.btn-sacar {
+  background-color: var(--pink-color-600);
+}
+
+.content-btn-atividades-user {
+  display: flex;
+  justify-content: space-between;
+  margin: 30px 20px;
+}
+
+.title-investimentos {
+  text-align: center;
+  color: var(--blue-color-600);
+  margin-bottom: 30px;
 }
 
 /* Login */
@@ -72,39 +101,34 @@
   color: white;
 }
 
-.title-login {
-  color: white;
-  font-size: 3em;
-  font-weight: 400;
-  text-align: center;
-  margin: 50px 0;
-}
-
-.label-input {
-  width: 100%;
-  position: relative;
-  margin-top: 25px;
-  text-align: center;
-}
-
-.icon-inputs {
-  width: 16px;
-  height: 16px;
-  color: rgba(153, 153, 153, 0.7);
-  position: absolute;
-  top: 12px;
-  left: 30px;
+.title {
+  font-size: 3.5em;
+  font-weight: 500;
+  font-family: Cabin;
+  color: var(--texts-inputs-400);
+  margin-top: 70px;
+  margin-bottom: 30px;
 }
 
 .inputs {
-  width: 90%;
+  width: 320px;
   padding: 10px;
-  height: 20px;
-  border-radius: 20px;
+  height: 15px;
+  border-radius: 30px;
   border: none;
-  background-color: #13111D;
-  color: white;
+  background-color: var(--texts-inputs-400);
+  color: var(--back-ground-600);
   text-align: center;
+  margin-top: 20px;
+  font-size: 1.6em;
+  font-weight: 600;
+  font-family: Cabin;
+}
+
+.btn-logar {
+  background-color: var(--blue-color-600);
+  font-size: 1.6em;
+  font-family: Poppins;
 }
 
 .content-facilitacao {
@@ -165,20 +189,25 @@
   justify-content: center;
   align-items: center;
   background-color: #1877f2;
-  color: white;
+  color: var(--texts-inputs-200);
+  border: none;
   font-weight: 700;
+  width: 321px;
   height: 40px;
   font-size: 1.5em;
   border-radius: 10px;
+  margin: 20px 0 10px;
 }
 
 .btn-google {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: white;
+  border: none;
+  background-color: var(--texts-inputs-200);
   color: #666;
   font-weight: 700;
+  width: 321px;
   height: 40px;
   font-size: 1.5em;
   border-radius: 10px;
@@ -193,6 +222,7 @@
   font-size: 1.1em;
   font-weight: 700;
   margin-left: 5px;
+  color: var(--pink-color-600);
 }
 
 /* Cadastro */
@@ -200,10 +230,14 @@
   padding: 10px;
   border-radius: 20px;
   border: none;
-  background-color: #13111D;
-  color: white;
+  background-color: var(--texts-inputs-400);
+  color: var(--back-ground-600);
   text-align: center;
-  width: 40%;
+  width: 140px;
+  height: 15px;
+  font-size: 1.5em;
+  font-weight: 600;
+  font-family: Cabin;
 }
 
 .content-full-name {
@@ -214,17 +248,24 @@
 }
 
 .input-date {
-  padding: 5px;
+  padding: 10px;
   border-radius: 20px;
   border: none;
-  width: 50%;
+  width: 140px;
+  height: 15px;margin-top: 20px;
+  background-color: var(--texts-inputs-400);
   text-align: center;
+}
+
+.label-input {
+  margin-top: 10px;
+  position: relative;
 }
 
 .checkbox-termos {
   position: absolute;
   top: 1px;
-  left: 40px;
+  left: -15px;
 }
 
 .text-termos {
@@ -238,38 +279,71 @@
   text-align: center;
 }
 
-/* Detalhes */
-.content-pay-currency {
-  color: white;
-  text-align: center;
+.btn-cadastrar {
+  font-size: 1.6em;
+  font-family: Poppins;
+  background-color: var(--blue-color-600);
+  margin-top: 30px;
 }
 
-.name-currency-detalhes {
-  font-size: 1.4em;
+.content-avatares > img {
+  margin: 10px 5px;
+  width: 45px;
+}
+
+/* Detalhes */
+.content-pay-currency {
+  color: var(--texts-inputs-200);
+  text-align: center;
 }
 
 .content-currency-detalhes {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   padding: 5px;
+  margin-top: 50px;
 }
 
 .content-currency-detalhes > p {
-  margin: 0 30px 15px;
-  font-size: 1.1em;
+  font-size: 1.5em;
+  color: var(--pink-color-600);
 }
 
 .input-investir {
-  width: 50%;
+  width: 160px;
+  height: 10px;
   padding: 10px;
-  border-radius: 20px;
+  border-radius: 15px;
   border: none;
   text-align: center;
-  margin-bottom: 50px;
+  margin-bottom: 30px;
+}
+
+.label-quant-investir > input {
+  font-weight: 600;
+  font-size: 1.6em;
+  background-color: var(--texts-inputs-200);
+  font-family: Cabin;
+}
+
+.label-quant-investir > p {
+  font-size: 1.6em;
+  margin-bottom: 5px;
+  margin-top: 50px;
 }
 
 .content-calculo {
-  margin-bottom: 20px;
+  margin-bottom: 30px;
+}
+
+.content-calculo > span {
+  font-size: 1.6em;
+}
+
+.content-calculo > p {
+  color: var(--purple-color-600);
+  font-size: 1.5em;
 }
 
 .link-btn {
@@ -277,9 +351,16 @@
   width: 100%;
 }
 
-.amount-to-pay {
-  color: #14a014;
+.btn-comprar {
+  background-color: var(--blue-color-600);
+  font-size: 1.6em;
+  font-family: Poppins;
 }
+
+.btn-comprar:disabled {
+  background-color: var(--blue-color-400);
+}
+
 /* Sell Currency */
 .content-sell-currency {
   width: 100%;
@@ -293,30 +374,180 @@
   flex-direction: column;
   width: 50%;
   justify-content: center;
+  margin-bottom: 30px;
+  margin-top: 50px;
+}
+
+.content-info > span {
+  color: var(--pink-color-600);
   font-size: 1.4em;
 }
 
-.content-sell-value {
-  display: flex;
-  justify-content: space-around;
-}
-
-.input-sell {
-  padding: 7px;
-  border-radius: 15px;
-  border: none;
-  text-align: center;
-  background-color: #13111D;
-  color: white;
-  margin: 20px 0;
-}
-
 .value-gain {
-  color: green;
-  font-size: 1.5em;
+  color: var(--purple-color-600);
+  font-size: 1.6em;
+}
+
+.content-conversao > p {
+  margin-top: 50px;
+  font-size: 1.6em;
+}
+
+.btn-sell {
+  background-color: var(--pink-color-600);
+  font-family: Poppins;
+  font-size: 1.6em;
+  margin-top: 35px;
+}
+
+.btn-sell:disabled {
+  background-color: var(--pink-color-400);
+}
+
+.label-info-sell {
+  width: 245px;
+  margin: 0 auto;
+  display: flex;
+  font-size: 1.1em;
 }
 
 /* Depositar */
+.btn-deposit {
+  font-family: Poppins;
+  background-color: var(--blue-color-600);
+  font-size: 1.6em;
+}
+
+.btn-deposit:disabled {
+  background-color: var(--blue-color-400);
+}
+
+.content-deposit {
+  margin: 50px auto 30px;
+  width: 190px;
+}
+
+.content-deposit > p {
+  font-size: 1.4em;
+  margin-bottom: 5px;
+}
+
+.content-deposit > input {
+  width: 180px;
+  height: 30px;
+  border-radius: 15px;
+  border: none;
+  text-align: center;
+  font-size: 1.6em;
+  font-family: Cabin;
+  font-weight: 600;
+  background-color: var(--texts-inputs-200);
+}
+
 .content-form-pagament {
-  color: white;
+  color: var(--texts-inputs-400);
+}
+
+.content-metodo-pagament {
+  width: 330px;
+  margin: 0 auto 30px;
+}
+
+.content-metodo-pagament > button {
+  width: 100px;
+  height: 30px;
+  border-radius: 15px;
+  border: none;
+  margin: 5px 5px;
+}
+
+.btn-pix:active,
+.btn-pix:hover,
+.btn-boleto:active,
+.btn-boleto:hover,
+.btn-cartao:active,
+.btn-cartao:hover {
+  background-color: var(--blue-color-600);
+}
+
+.btn-pix,
+.btn-boleto,
+.btn-cartao {
+  background-color: var(--pink-color-600);
+  font-family: Poppins;
+  font-size: 1.4em;
+  color: var(--texts-inputs-200);
+}
+
+.link-deposit {
+  width: 240px;
+  height: 30px;
+  margin: 0 auto;
+}
+
+/* Sacar */
+.btn-saque {
+  background-color: var(--blue-color-600);
+  font-family: Poppins;
+  font-size: 1.6em;
+}
+
+.btn-saque:disabled {
+  background-color: var(--blue-color-400);
+}
+
+.content-btn {
+  width: 240px;
+  margin: 30px auto 0;
+  text-align: center;
+}
+
+.content-saque {
+  margin: 50px auto 35px;
+  color: var(--texts-inputs-400);
+  width: 190px;
+}
+
+.content-saque > input {
+  width: 180px;
+  height: 30px;
+  border-radius: 15px;
+  border: none;
+  text-align: center;
+  font-size: 1.6em;
+  font-family: Cabin;
+  font-weight: 600;
+  background-color: var(--texts-inputs-200);
+}
+
+.content-saque > p {
+  font-size: 1.6em;
+  margin-bottom: 5px;
+}
+
+.form-sacar {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-sacar > h4 {
+  color: var(--texts-inputs-400);
+}
+
+.form-sacar > input {
+  width: 320px;
+  height: 30px;
+  border-radius: 15px;
+  border: none;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.form-sacar > select {
+  width: 240px;
+  height: 30px;
+  border-radius: 7px;
+  border: none;
+  margin: 0 auto;
 }

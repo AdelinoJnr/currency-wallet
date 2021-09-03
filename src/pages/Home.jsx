@@ -17,7 +17,6 @@ function Home() {
   return (
     <>
       <Header />
-      <hr />
       <Welcome />
       <Currencys />
       <Footer />

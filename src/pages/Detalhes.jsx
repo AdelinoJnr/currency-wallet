@@ -2,13 +2,14 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import Footer from '../components/Footer';
-import Header from '../components/Header';
+import HeaderBack from '../components/HeaderBack';
 import Loading from '../components/Loading';
-import Welcome from '../components/Welcome';
 
 import { currencysNames } from '../data';
 import { getCurrencyApiCryptoQuery } from '../services/requestApi';
 import { currencyActivity, updateLocalStorage } from '../utils/functions';
+
+import './styles.css';
 
 function Detalhes({ match }) {
   const [currency, setCurrency] = useState(false);
@@ -39,26 +40,30 @@ function Detalhes({ match }) {
 
   return (
     <>
-      <Header />
-      <hr />
-      <Welcome />
-      <h3 className="title-login">Investir</h3>
+      <HeaderBack text="Investir" rota="/" />
       <section className="content-pay-currency">
-        <h4 className="name-currency-detalhes">{currencysNames[id]}</h4>
         <div className="content-currency-detalhes">
-          <p>{id}</p>
-          <p>{Number(buy).toFixed(2)}</p>
+          <h4 className="title-3">{`${currencysNames[id]} - ${id}`}</h4>
+          <p>{`R$ ${Number(buy).toFixed(2)}`}</p>
         </div>
-        <input
-          onChange={(ev) => setcurrentValue(ev.target.value)}
-          type="number"
-          name="valorCurrency"
-          value={currentValue}
-          className="input-investir"
-        />
+
+        <label htmlFor="valorCurrency" className="label-quant-investir">
+          <p>Quanto deseja investir ?</p>
+          <input
+            onChange={(ev) => setcurrentValue(ev.target.value)}
+            type="number"
+            name="valorCurrency"
+            id="valorCurrency"
+            value={currentValue}
+            className="input-investir"
+          />
+        </label>
+
         <div className="content-calculo">
-          <p className="amount-to-pay">{`${renderValueToPayBRL()} ${id}`}</p>
+          <span>Valor convertido</span>
+          <p>{`${id} ${renderValueToPayBRL()}`}</p>
         </div>
+
         <Link
           onClick={() => {
             currencyActivity(Number(currentValue), 'comprar');
@@ -73,7 +78,7 @@ function Detalhes({ match }) {
           className="link-btn"
           to="/"
         >
-          <button type="button" className="btn-padrao">Comprar</button>
+          <button disabled={currentValue === ''} type="button" className="btn-acao btn-comprar">Comprar</button>
         </Link>
       </section>
       <Footer />

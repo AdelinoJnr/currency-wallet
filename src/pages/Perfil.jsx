@@ -1,13 +1,16 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Footer from '../components/Footer';
 import Header from '../components/Header';
+import Welcome from '../components/Welcome';
+
 import Obama from '../image/barack_obama.jpg';
 
 function Perfil() {
   return (
     <>
       <Header />
-      <hr />
+      <Welcome />
       <section>
         <section className="content-perfil">
           <img className="img-user-perfil" src={Obama} alt="Foto do Usuario" />
@@ -17,12 +20,18 @@ function Perfil() {
           </div>
         </section>
         <section className="content-btn-perfil">
-          <button className="btn-padrao" type="button">
+          <button className="btn btn-historic" type="button">
             Historico de compras
           </button>
-          <button className="btn-padrao btn-exit" type="button">
-            Sair
-          </button>
+          <Link to="/login">
+            <button
+              className="btn btn-exit"
+              type="button"
+              onClick={() => localStorage.removeItem('user')}
+            >
+              Sair
+            </button>
+          </Link>
         </section>
       </section>
       <Footer />

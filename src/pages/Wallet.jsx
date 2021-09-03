@@ -29,9 +29,20 @@ function Wallet() {
     const data = calculateBalanceValues(storage);
     const result = Number(lucroCurrent).toFixed(2);
     const calculate = Number(result) - data;
-    const total = calculate >= 0 ? `+${calculate.toFixed(2)}` : calculate.toFixed(2);
-    setLucro(total);
+    /* const total = calculate >= 0 ? `+ RS ${calculate.toFixed(2)}` : calculate.toFixed(2); */
+    setLucro(calculate);
     setTotalBalance(data.toFixed(2));
+  };
+
+  const renderLucro = (number) => {
+    if (number < 0) {
+      return (
+        <span className="valor-negativo">{`- R$ ${Math.abs(number.toFixed(2))}`}</span>
+      );
+    }
+    return (
+      <span className="valor-positivo">{`+ R$ ${number.toFixed(2)}`}</span>
+    );
   };
 
   useEffect(() => {
@@ -51,27 +62,33 @@ function Wallet() {
   return (
     <>
       <Header />
-      <hr />
       <Welcome />
-      <h3 className="title-login">Carteira</h3>
-      <div>
+      <div className="content-btn-atividades-user">
         <Link to="/depositar">
-          <button type="button" className="btn-padrao btn-ladoalado btn-exit">
+          <button type="button" className="btn-metade btn-depositar">
             Depositar
           </button>
         </Link>
         <Link to="/saque">
-          <button type="button" className="btn-padrao btn-ladoalado">
+          <button type="button" className="btn-metade btn-sacar">
             Retirar
           </button>
         </Link>
       </div>
+
       <section>
         <div className="content-balance">
-          <span>Total Balance</span>
-          <span>{`${lucro} BRL`}</span>
-          <p>{`${totalBalance} BRL`}</p>
+          <div>
+            <p>Total Investimentos</p>
+            <span className="total-investiments">{totalBalance}</span>
+          </div>
+          <div>
+            <p>Lucro total</p>
+            {renderLucro(lucro)}
+          </div>
         </div>
+
+        <h3 className="title-3 title-investimentos">Meus investimentos</h3>
         {renderInvestments()}
       </section>
       <Footer />

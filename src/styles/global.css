@@ -1,3 +1,32 @@
+:root {
+
+  --back-ground-600: rgb(37, 37, 49);
+
+  --black-color-800: rgb(19, 17, 29);
+
+  --purple-color-600: rgb(158, 104, 217);
+  
+  --blue-purple-color-600: rgb(133, 109, 227);
+  
+  --blue-color-600: rgb(108, 114, 205);
+
+  --blue-color-400: rgba(24, 32, 134, 0.603);
+  
+  --pink-color-600: rgb(203, 105, 193);
+
+  --pink-color-400: rgba(104, 4, 94, 0.561);
+  
+  --green-color-600: rgb(39, 143, 36);
+
+  --red-color-600: rgb(146, 7, 7);
+
+  --texts-inputs-600: rgb(152, 152, 152);
+  
+  --texts-inputs-400: rgb(227, 227, 227);
+
+  --texts-inputs-200: rgb(243, 243, 243);
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -11,13 +40,46 @@ body {
 
 a {
   text-decoration: none;
-  color: #b118a4;
+  color: var(--pink-color-600);
 }
 
 *:focus {
   outline: none;
 }
 
-button:disabled {
-  background-color: #6f952ad8;
+.btn {
+  width: 321px;
+  height: 30px;
+  border-radius: 15px;
+  border: none;
+  color: var(--texts-inputs-200);
+}
+
+.btn-metade { 
+  width: 140px;
+  height: 30px;
+  border-radius: 15px;
+  border: none;
+  color: var(--texts-inputs-200);
+}
+
+.btn-acao {
+  width: 240px;
+  height: 30px;
+  border-radius: 15px;
+  border: none;
+  color: var(--texts-inputs-200);
+}
+
+.title-3 {
+  font-size: 2em;
+  font-weight: 400;
+  text-align: center;
+}
+
+input {
+  color: #252531;
+  font-size: 1.5em;
+  font-weight: 600;
+  font-family: Cabin;
 }

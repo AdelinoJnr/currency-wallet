@@ -1,9 +1,11 @@
 import React from 'react';
 import { RiMoneyDollarCircleFill } from 'react-icons/ri';
 
-import { userDefault } from '../data';
+import { userDefault } from '../../data';
 
-import Obama from '../image/barack_obama.jpg';
+import Obama from '../../image/barack_obama.jpg';
+
+import './style.css';
 
 function Welcome() {
   const key = localStorage.getItem('user');
@@ -16,9 +18,8 @@ function Welcome() {
       </div>
       <div className="content-money">
         <RiMoneyDollarCircleFill className="icon-money" />
-        <div className="content-money">
-          <span className="money">{Number(elent).toFixed(2)}</span>
-          <span className="sigla">BRL</span>
+        <div className="content-money-balance">
+          <span className="money">{`R$ ${Number(elent).toFixed(2)}`}</span>
         </div>
       </div>
     </section>
