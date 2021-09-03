@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import Footer from '../components/Footer';
-import Header from '../components/Header';
 
+import Footer from '../components/Footer';
+import HeaderBack from '../components/HeaderBack';
 import Loading from '../components/Loading';
-import Welcome from '../components/Welcome';
 import { currencysNames } from '../data';
 
 import { getCurrencyApiCryptoQuery } from '../services/requestApi';
@@ -48,31 +47,30 @@ function Sellcurrency({ match }) {
 
   return (
     <>
-      <Header />
-      <hr />
-      <Welcome />
-      <h3 className="title-login">Vender</h3>
+      <HeaderBack text="Vender" rota="/wallet" />
       <section className="content-sell-currency">
+
         <div className="content-info">
-          <h2>{currencysNames[id]}</h2>
-          <div className="content-sell-value">
-            <span>{id}</span>
-            <span>{totalValue}</span>
-          </div>
+          <h4 className="title-3">{currencysNames[id]}</h4>
+          <span>{`${id} - ${totalValue}`}</span>
         </div>
+
         <label className="label-info-sell" htmlFor="info">
           <input onClick={(ev) => setCheckedInput(ev.target.checked)} type="checkbox" id="info" />
           Esse processo não pode ser revertido, se você realmente deseja, marque essa opção
         </label>
 
-        <p className="value-gain">
-          {checkedInput ? `+ ${calculateValueGain().toFixed(2)} BRL` : '+ 0.00 BRL'}
-        </p>
+        <div className="content-conversao">
+          <p>Valor convertido</p>
+          <span className="value-gain">
+            {checkedInput ? `+ ${calculateValueGain().toFixed(2)} BRL` : '+ 0.00 BRL'}
+          </span>
+        </div>
 
         <Link to="" className="link-btn">
           <button
             disabled={!checkedInput}
-            className="btn-padrao"
+            className="btn-acao btn-sell"
             type="button"
             onClick={() => currencyActivity(calculateValueGain(), 'vender', id)}
           >

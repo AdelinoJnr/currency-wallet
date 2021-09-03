@@ -62,7 +62,6 @@ function Wallet() {
   return (
     <>
       <Header />
-      <hr />
       <Welcome />
       <div className="content-btn-atividades-user">
         <Link to="/depositar">

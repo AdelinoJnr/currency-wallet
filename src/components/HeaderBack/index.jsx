@@ -3,6 +3,8 @@ import { TiArrowLeftThick } from 'react-icons/ti';
 import { GiHamburgerMenu } from 'react-icons/gi';
 import { Link } from 'react-router-dom';
 
+import './style.css';
+
 function HeaderBack({ text, rota }) {
   return (
     <header className="headerback">

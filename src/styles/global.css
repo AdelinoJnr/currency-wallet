@@ -11,6 +11,8 @@
   --blue-color-600: rgb(108, 114, 205);
   
   --pink-color-600: rgb(203, 105, 193);
+
+  --pink-color-400: rgba(104, 4, 94, 0.561);
   
   --green-color-600: rgb(39, 143, 36);
 
@@ -52,6 +54,14 @@ a {
 
 .btn-metade { 
   width: 140px;
+  height: 30px;
+  border-radius: 15px;
+  border: none;
+  color: var(--texts-inputs-200);
+}
+
+.btn-acao {
+  width: 240px;
   height: 30px;
   border-radius: 15px;
   border: none;
