@@ -57,7 +57,7 @@ function Sellcurrency({ match }) {
 
         <label className="label-info-sell" htmlFor="info">
           <input onClick={(ev) => setCheckedInput(ev.target.checked)} type="checkbox" id="info" />
-          Esse processo não pode ser revertido, se você realmente deseja, marque essa opção
+          <p>Esse processo não pode ser revertido, se você realmente deseja, marque essa opção</p>
         </label>
 
         <div className="content-conversao">

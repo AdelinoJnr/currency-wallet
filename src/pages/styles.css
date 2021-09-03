@@ -364,6 +364,13 @@
   background-color: var(--pink-color-400);
 }
 
+.label-info-sell {
+  width: 245px;
+  margin: 0 auto;
+  display: flex;
+  font-size: 1.1em;
+}
+
 /* Depositar */
 .content-form-pagament {
   color: white;
