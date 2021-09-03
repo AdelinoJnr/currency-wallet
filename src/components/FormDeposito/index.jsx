@@ -1,20 +1,20 @@
 import React from 'react';
 
-function FormDeposit() {
+import './style.css';
+
+function FormDeposit({ value }) {
   return (
-    <form>
-      <label htmlFor="cartao">
-        <input type="radio" name="deposit" id="cartao" />
-        Cartão de Credito
-      </label>
-      <label htmlFor="boleto">
-        <input type="radio" name="deposit" id="boleto" />
-        Boleto
-      </label>
-      <label htmlFor="Pix">
-        <input type="radio" name="deposit" id="Pix" />
-        Pix
-      </label>
+    <form className="form-deposit">
+      <h4 className="title-3">Preencher os dados</h4>
+      <input className="inputs-deposit" type="text" name="titular" placeholder="Nome do Titular" />
+      <div>
+        <input className="input-pair" type="number" name="cvv" placeholder="CVV" />
+        <input className="input-pair" type="number" name="vencimento" placeholder="Data de vencimento" />
+      </div>
+      <input className="inputs-deposit" type="number" name="conta" placeholder="Número do cartão" />
+      <select name="parcela">
+        <option value="1x">{`1x - R$ ${value}`}</option>
+      </select>
     </form>
   );
 }

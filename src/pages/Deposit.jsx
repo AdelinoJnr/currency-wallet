@@ -10,23 +10,30 @@ import { currencyActivity } from '../utils/functions';
 function Deposit() {
   const [valueDeposit, setValueDeposit] = useState('');
 
-  const renderButtonFinish = () => (
-    <Link to="/">
-      <button onClick={() => currencyActivity(valueDeposit, 'adicionar')} type="button">
-        Depositar
-      </button>
-    </Link>
-  );
-
   return (
     <>
       <HeaderBack rota="/wallet" text="Depositar" />
       <section className="content-form-pagament">
-        <h4>Valor para depositar</h4>
-        <input value={valueDeposit} onChange={(ev) => setValueDeposit(ev.target.value)} type="number" name="valueDeposito" id="valueDeposito" />
-        <h4>Metodo de pagamento</h4>
-        {valueDeposit !== '' && <FormDeposit />}
-        {valueDeposit !== '' && renderButtonFinish()}
+        <div className="content-deposit">
+          <p>Quanto deseja depositar ?</p>
+          <input value={valueDeposit} onChange={(ev) => setValueDeposit(ev.target.value)} type="number" name="valueDeposito" id="valueDeposito" />
+        </div>
+        <div className="content-metodo-pagament">
+          <h3 className="title-3">Metodo de pagamento</h3>
+          <button className="btn-cartao" type="button">Cartão</button>
+          <button className="btn-boleto" type="button">Boleto</button>
+          <button className="btn-pix" type="button">Pix</button>
+        </div>
+        {valueDeposit !== '' && <FormDeposit value={valueDeposit} />}
+        {valueDeposit !== '' && (
+          <div className="link-deposit">
+            <Link to="/">
+              <button className="btn-acao btn-deposit" onClick={() => currencyActivity(valueDeposit, 'adicionar')} type="button">
+                Confirmar
+              </button>
+            </Link>
+          </div>
+        )}
       </section>
       <Footer />
     </>
