@@ -86,3 +86,15 @@ export const validadeSaque = (value, conta, name, email, phone) => {
   if (phone.length < 10) return false;
   return true;
 };
+
+export const validadeCadastro = (email, firstName, lastName, password, termos) => {
+  const emailValidator = /^[\S.]+@[a-z]+\.\w{2,3}$/g.test(email);
+
+  if (!emailValidator) return false;
+  if (firstName.length < 3) return false;
+  if (lastName.length < 3) return false;
+  if (password.length < 8) return false;
+  if (!termos) return false;
+
+  return true;
+};

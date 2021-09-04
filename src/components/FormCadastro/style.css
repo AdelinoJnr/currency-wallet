@@ -11,3 +11,11 @@
   flex-direction: column;
   align-items: center;
 }
+
+.btn-cadastrar:disabled {
+  background-color: var(--blue-color-400);
+}
+
+.label-input {
+  margin-top: 15px;
+}

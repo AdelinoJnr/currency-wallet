@@ -1,33 +1,76 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { validadeCadastro } from '../../utils/functions';
 
 import './style.css';
 
 function FormCadastro() {
+  const [email, setEmail] = useState('');
+  const [firstName, setFirstName] = useState('');
+  const [lastName, setLastName] = useState('');
+  const [password, setPassword] = useState('');
+  const [termos, setTermos] = useState(false);
+
   return (
     <form className="form-cadastro">
-      <input type="email" id="email" className="inputs" placeholder="Digite seu email" />
+      <input
+        type="email"
+        className="inputs"
+        placeholder="Digite seu email"
+        value={email}
+        onChange={(ev) => setEmail(ev.target.value)}
+      />
       <div className="content-full-name">
-        <input className="input-name-user" type="text" id="firstname" placeholder="Digite seu nome" />
-        <input className="input-name-user" type="text" id="lastname" placeholder="Digite seu sobrenome" />
+        <input
+          className="input-name-user"
+          type="text"
+          placeholder="Digite seu nome"
+          value={firstName}
+          onChange={(ev) => setFirstName(ev.target.value)}
+        />
+        <input
+          className="input-name-user"
+          type="text"
+          placeholder="Digite seu sobrenome"
+          value={lastName}
+          onChange={(ev) => setLastName(ev.target.value)}
+        />
       </div>
-      <input className="input-date" type="date" id="data" />
-      <input type="password" id="password" className="inputs" placeholder="Digite sua senha" />
-      <input type="password" id="password" className="inputs" placeholder="Digite sua senha novamente" />
+      <input
+        type="password"
+        className="inputs"
+        placeholder="Digite sua senha"
+        value={password}
+        onChange={(ev) => setPassword(ev.target.value)}
+      />
 
       <label className="label-input" htmlFor="termos">
-        <input className="checkbox-termos" type="checkbox" name="termos" id="termos" />
+        <input
+          className="checkbox-termos"
+          type="checkbox"
+          name="termos"
+          id="termos"
+          value={termos}
+          onClick={(ev) => setTermos(ev.target.checked)}
+        />
         <p className="text-termos">
           Eu li e e aceito os
-          <Link to="/">Termos e condições </Link>
+          {' '}
+          <Link to="/cadastro">Termos e condições </Link>
           de uso!
         </p>
       </label>
-      <Link to="/login">
-        <button className="btn-acao btn-cadastrar" type="button">
-          Cadastrar
-        </button>
-      </Link>
+      <div>
+        <Link to="/login">
+          <button
+            disabled={!validadeCadastro(email, firstName, lastName, password, termos)}
+            className="btn-acao btn-cadastrar"
+            type="button"
+          >
+            Cadastrar
+          </button>
+        </Link>
+      </div>
     </form>
   );
 }
