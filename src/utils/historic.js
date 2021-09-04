@@ -22,7 +22,7 @@ export const updateBuyAndSaque = (userId, action, key) => {
     registerDate,
   };
   const modificSaque = users.map((e) => {
-    if (userId === e.userId) {
+    if (userId === e.userId && action.value < e.balance) {
       const newUpdate = {
         ...e,
         balance: Number(e.balance) - Number(action.value),
