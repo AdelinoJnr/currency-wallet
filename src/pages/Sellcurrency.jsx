@@ -8,17 +8,20 @@ import { currencysNames } from '../data';
 
 import { getCurrencyApiCryptoQuery } from '../services/requestApi';
 import { converteInNumber } from '../utils/functions';
-import { updateSellAndDeposit } from '../utils/historic';
+import { getHistoryBuys, updateSellAndDeposit } from '../utils/historic';
 
 function Sellcurrency({ match }) {
   const [currency, setCurrency] = useState(false);
-  const [currentCurrency, setCurrentCurrency] = useState({});
   const [checkedInput, setCheckedInput] = useState(false);
   const { id } = match.params;
   const { buy } = currency;
-  const { totalValue } = currentCurrency;
-
   const { userId } = JSON.parse(localStorage.getItem('user'));
+
+  const quantCurrency = () => {
+    const history = getHistoryBuys(userId);
+    const value = history.compras.find((e) => e.code === id).totalCurrency;
+    return value;
+  };
 
   useEffect(() => {
     const fetchAPI = async () => {
@@ -28,19 +31,9 @@ function Sellcurrency({ match }) {
     fetchAPI();
   }, []);
 
-  useEffect(() => {
-    const updateAtualCurrency = () => {
-      const key = localStorage.getItem('investimentos');
-      const storage = key ? JSON.parse(key) : [];
-      const filter = storage.find((item) => item.code === id);
-      setCurrentCurrency(filter);
-    };
-    updateAtualCurrency();
-  }, []);
-
   const calculateValueGain = () => {
     const priceCurrency = converteInNumber(buy);
-    const total = totalValue * priceCurrency;
+    const total = Number(quantCurrency()) * priceCurrency;
     return total;
   };
 
@@ -55,7 +48,7 @@ function Sellcurrency({ match }) {
 
         <div className="content-info">
           <h4 className="title-3">{currencysNames[id]}</h4>
-          <span>{`${id} - ${totalValue}`}</span>
+          <span>{`${id} - ${quantCurrency()}`}</span>
         </div>
 
         <label className="label-info-sell" htmlFor="info">
