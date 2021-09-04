@@ -1,3 +1,10 @@
+import avatar1 from './image/avatar1.png';
+import avatar2 from './image/avatar2.png';
+import avatar3 from './image/avatar3.png';
+import avatar4 from './image/avatar4.png';
+import avatar5 from './image/avatar5.png';
+import avatar6 from './image/avatar6.png';
+
 export const currencys = [
   'AAVE', 'ALLFT', 'AMFT', 'ARGFT', 'ASRFT', 'ATMFT', 'AXS', 'BAL', 'BARFT', 'BAT', 'BCH', 'BTC', 'CAIFT', 'CHZ', 'CITYFT', 'COMP', 'CRV', 'DAI', 'ENJ', 'ETH', 'GALFT', 'GRT', 'JUVFT', 'KNC', 'LINK', 'LTC', 'MANA', 'MCO2', 'MKR', 'NAVIFT', 'OGFT', 'PAXG', 'PFLFT', 'PSGFT', 'REN', 'SAUBERFT', 'SNX', 'THFT', 'UMA', 'UNI', 'USDC', 'WBX', 'XRP', 'YFI', 'ZRX',
 ];
@@ -5,7 +12,8 @@ export const currencys = [
 export const userDefault = {
   name: 'Neymar Junior',
   email: 'neymarPSG@gmail.com',
-  currency: 79483000,
+  balance: 79483000,
+  avatar: 'avatar1',
 };
 
 export const currencysNames = {
@@ -58,4 +66,13 @@ export const currencysNames = {
   XRP: 'XRP',
   YFI: 'Yearn',
   ZRX: '0x',
+};
+
+export const avatars = {
+  avatar1,
+  avatar2,
+  avatar3,
+  avatar4,
+  avatar5,
+  avatar6,
 };

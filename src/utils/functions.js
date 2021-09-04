@@ -32,7 +32,7 @@ const mensageError = 'Dinheiro cobrado a mais do que o usuario tem em sua conta'
 
 export const currencyActivity = (valor, condicao, code) => {
   const storage = JSON.parse(localStorage.getItem('user'));
-  const balanceClient = Number(storage.elent);
+  const balanceClient = Number(storage.balance);
   if (condicao === 'comprar' && balanceClient < valor) {
     return console.log(mensageError);
   }
@@ -44,7 +44,7 @@ export const currencyActivity = (valor, condicao, code) => {
   console.log(currencyUser);
   const user = {
     ...storage,
-    elent: currencyUser.toFixed(2),
+    balance: currencyUser.toFixed(2),
   };
   localStorage.setItem('user', JSON.stringify(user));
 };
