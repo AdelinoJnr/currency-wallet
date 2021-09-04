@@ -7,7 +7,8 @@ import Loading from '../components/Loading';
 import { currencysNames } from '../data';
 
 import { getCurrencyApiCryptoQuery } from '../services/requestApi';
-import { converteInNumber, currencyActivity } from '../utils/functions';
+import { converteInNumber } from '../utils/functions';
+import { updateSellAndDeposit } from '../utils/historic';
 
 function Sellcurrency({ match }) {
   const [currency, setCurrency] = useState(false);
@@ -16,6 +17,8 @@ function Sellcurrency({ match }) {
   const { id } = match.params;
   const { buy } = currency;
   const { totalValue } = currentCurrency;
+
+  const { userId } = JSON.parse(localStorage.getItem('user'));
 
   useEffect(() => {
     const fetchAPI = async () => {
@@ -72,7 +75,10 @@ function Sellcurrency({ match }) {
             disabled={!checkedInput}
             className="btn-acao btn-sell"
             type="button"
-            onClick={() => currencyActivity(calculateValueGain(), 'vender', id)}
+            onClick={() => updateSellAndDeposit(userId, {
+              value: Number(calculateValueGain().toFixed(2)),
+              code: id,
+            }, 'vendas')}
           >
             Confirmar
           </button>

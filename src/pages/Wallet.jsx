@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import Footer from '../components/Footer';
 import Header from '../components/Header';
@@ -7,32 +7,31 @@ import Welcome from '../components/Welcome';
 import Investimentos from '../components/Investimentos';
 
 import { CurrencyContext } from '../store/Currency/currency';
-import { calculateBalanceValues, converteInNumber } from '../utils/functions';
+import { getHistoryBuys } from '../utils/historic';
 
 function Wallet() {
-  const [totalBalance, setTotalBalance] = useState(0);
-  const [lucro, setLucro] = useState(0);
+  // const [totalBalance, setTotalBalance] = useState(0);
+  // const [lucro, setLucro] = useState(0);
   const { currencyCrypto } = useContext(CurrencyContext);
-  const key = localStorage.getItem('investimentos');
-  const storage = key ? JSON.parse(key) : [];
+  const { userId } = JSON.parse(localStorage.getItem('user'));
 
-  const updateBalance = () => {
-    const lucroCurrent = storage.reduce((acc, curr) => {
-      const inputCurrent = converteInNumber(curr.totalValue);
-      const searchCurrency = currencyCrypto
-        .find((currency) => Object.keys(currency)[0] === curr.code);
-      console.log(searchCurrency);
-      const price = searchCurrency[curr.code].sell;
-      const totalPrice = inputCurrent * price;
-      return acc + totalPrice;
-    }, 0);
-    const data = calculateBalanceValues(storage);
-    const result = Number(lucroCurrent).toFixed(2);
-    const calculate = Number(result) - data;
-    /* const total = calculate >= 0 ? `+ RS ${calculate.toFixed(2)}` : calculate.toFixed(2); */
-    setLucro(calculate);
-    setTotalBalance(data.toFixed(2));
-  };
+  // const updateBalance = () => {
+  //   const lucroCurrent = storage.reduce((acc, curr) => {
+  //     const inputCurrent = converteInNumber(curr.totalValue);
+  //     const searchCurrency = currencyCrypto
+  //       .find((currency) => Object.keys(currency)[0] === curr.code);
+  //     console.log(searchCurrency);
+  //     const price = searchCurrency[curr.code].sell;
+  //     const totalPrice = inputCurrent * price;
+  //     return acc + totalPrice;
+  //   }, 0);
+  //   const data = calculateBalanceValues(storage);
+  //   const result = Number(lucroCurrent).toFixed(2);
+  //   const calculate = Number(result) - data;
+  //   /* const total = calculate >= 0 ? `+ RS ${calculate.toFixed(2)}` : calculate.toFixed(2); */
+  //   setLucro(calculate);
+  //   setTotalBalance(data.toFixed(2));
+  // };
 
   const renderLucro = (number) => {
     if (number < 0) {
@@ -45,13 +44,14 @@ function Wallet() {
     );
   };
 
-  useEffect(() => {
+  /* useEffect(() => {
     updateBalance();
-  }, []);
+  }, []); */
 
   const renderInvestments = () => (
     <section className="main-investimentos">
-      {storage.map((item) => <Investimentos key={item.code} investiment={item} />)}
+      {getHistoryBuys(userId).compras
+        .map((item) => <Investimentos key={item.code} investiment={item} />)}
     </section>
   );
 
@@ -80,11 +80,11 @@ function Wallet() {
         <div className="content-balance">
           <div>
             <p>Total Investimentos</p>
-            <span className="total-investiments">{totalBalance}</span>
+            <span className="total-investiments">{0}</span>
           </div>
           <div>
             <p>Lucro total</p>
-            {renderLucro(lucro)}
+            {renderLucro(0)}
           </div>
         </div>
 

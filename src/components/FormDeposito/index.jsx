@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { currencyActivity, validadeGereneteCartao } from '../../utils/functions';
+import { validadeGereneteCartao } from '../../utils/functions';
+import { updateSellAndDeposit } from '../../utils/historic';
 import Opiton from '../Options';
 
 import './style.css';
@@ -10,6 +11,8 @@ function FormDeposit({ value }) {
   const [cvv, setCvv] = useState('');
   const [vencimento, setVencimento] = useState('');
   const [conta, setConta] = useState('');
+
+  const { userId } = JSON.parse(localStorage.getItem('user'));
 
   const renderOptions = () => {
     if (value < 100) {
@@ -83,7 +86,11 @@ function FormDeposit({ value }) {
         <Link className="link-deposit" to="/">
           <button
             className="btn-acao btn-deposit"
-            onClick={() => currencyActivity(value, 'adicionar')}
+            onClick={() => updateSellAndDeposit(userId, {
+              value,
+              metodo: 'cartão',
+              name: nomeTitular,
+            }, 'deposito')}
             type="button"
             disabled={!validadeGereneteCartao(nomeTitular, cvv, vencimento, conta)}
           >
