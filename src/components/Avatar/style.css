@@ -1,0 +1,15 @@
+/* Avatar */
+label > img {
+  margin: 10px 5px;
+  width: 45px;
+}
+
+.btn-avatar {
+  border-radius: 50%;
+  border: none;
+  width: 45px;
+}
+
+.radio-input {
+  display: none;
+}
