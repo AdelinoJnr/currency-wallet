@@ -8,7 +8,7 @@ function Cadastro() {
     <main className="main-login">
       <h3 className="title">Sign up</h3>
       <Avatar setAvatar={setAvatar} />
-      {avatar !== '' && <FormCadastro />}
+      {avatar !== '' && <FormCadastro avatar={avatar} />}
     </main>
   );
 }

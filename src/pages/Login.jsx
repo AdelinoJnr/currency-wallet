@@ -1,25 +1,45 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState } from 'react';
+import { Link, Redirect } from 'react-router-dom';
 import { FaFacebook } from 'react-icons/fa';
 import { FcGoogle } from 'react-icons/fc';
 
 import './styles.css';
+import { authUser, userAccess } from '../utils/UserLogin';
 
 function Login() {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [useApp, setUseApp] = useState(false);
+
+  const authUserLogin = () => {
+    if (authUser(email, password)) {
+      userAccess(email);
+      setUseApp(true);
+      return;
+    }
+    alert('Usuario invalido');
+  };
+
+  if (useApp) {
+    return <Redirect to="/" />;
+  }
+
   return (
     <main className="main-login">
       <h3 className="title">Sign in</h3>
       <input
-        id="email"
         className="inputs"
         placeholder="Email"
         type="email"
+        value={email}
+        onChange={(ev) => setEmail(ev.target.value)}
       />
       <input
-        id="password"
         className="inputs"
         placeholder="Senha"
         type="password"
+        value={password}
+        onChange={(ev) => setPassword(ev.target.value)}
       />
       <div className="content-facilitacao">
         <label htmlFor="conect" className="label-connected">
@@ -29,11 +49,11 @@ function Login() {
         <span>esqueceu a senha?</span>
       </div>
 
-      <Link className="login-efect" to="/">
-        <button type="button" className="btn-acao btn-logar">
+      <div className="login-efect">
+        <button onClick={authUserLogin} type="button" className="btn-acao btn-logar">
           Entrar
         </button>
-      </Link>
+      </div>
 
       <div className="content-or-rede-social">
         <hr />

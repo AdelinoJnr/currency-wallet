@@ -1,15 +1,30 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import { validadeCadastro } from '../../utils/functions';
+import { saveUser, userExists } from '../../utils/UserLogin';
 
 import './style.css';
 
-function FormCadastro() {
+function FormCadastro({ avatar }) {
   const [email, setEmail] = useState('');
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [password, setPassword] = useState('');
+  const [checked, setChecked] = useState('');
   const [termos, setTermos] = useState(false);
+
+  const cadastroUser = () => {
+    if (userExists(email)) {
+      return alert('Esse email ja existe');
+    }
+    const fullName = `${firstName} ${lastName}`;
+    saveUser(fullName, password, email, avatar);
+    setChecked(true);
+  };
+
+  if (checked) {
+    return <Redirect to="/login" />;
+  }
 
   return (
     <form className="form-cadastro">
@@ -61,16 +76,20 @@ function FormCadastro() {
         </p>
       </label>
       <div>
-        <Link to="/login">
-          <button
-            disabled={!validadeCadastro(email, firstName, lastName, password, termos)}
-            className="btn-acao btn-cadastrar"
-            type="button"
-          >
-            Cadastrar
-          </button>
-        </Link>
+        <button
+          onClick={cadastroUser}
+          disabled={!validadeCadastro(email, firstName, lastName, password, termos)}
+          className="btn-acao btn-cadastrar"
+          type="button"
+        >
+          Cadastrar
+        </button>
       </div>
+
+      <span className="register">
+        Já tem cadastro ?
+        <Link className="link-register" to="/login">sign in</Link>
+      </span>
     </form>
   );
 }
