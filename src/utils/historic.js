@@ -75,3 +75,29 @@ export const getHistoryBuys = (userId) => {
   const { history } = users.find((e) => e.userId === userId);
   return history;
 };
+
+export const setHistoryUser = (userId, history) => {
+  const users = getUsers();
+  const modificHistory = users.map((e) => {
+    if (e.userId === userId) {
+      const newHistory = {
+        ...e,
+        history,
+      };
+      localStorage.setItem('user', JSON.stringify(newHistory));
+      return newHistory;
+    }
+    return e;
+  });
+  localStorage.setItem('users', JSON.stringify(modificHistory));
+};
+
+export const removeCurrencySell = (userId, code) => {
+  const history = getHistoryBuys(userId);
+  const filterHistory = history.compras.filter((e) => e.code !== code);
+  const newHistory = {
+    ...history,
+    compras: filterHistory,
+  };
+  setHistoryUser(userId, newHistory);
+};

@@ -8,7 +8,7 @@ import { currencysNames } from '../data';
 
 import { getCurrencyApiCryptoQuery } from '../services/requestApi';
 import { converteInNumber } from '../utils/functions';
-import { getHistoryBuys, updateSellAndDeposit } from '../utils/historic';
+import { getHistoryBuys, removeCurrencySell, updateSellAndDeposit } from '../utils/historic';
 
 function Sellcurrency({ match }) {
   const [currency, setCurrency] = useState(false);
@@ -68,10 +68,13 @@ function Sellcurrency({ match }) {
             disabled={!checkedInput}
             className="btn-acao btn-sell"
             type="button"
-            onClick={() => updateSellAndDeposit(userId, {
-              value: Number(calculateValueGain().toFixed(2)),
-              code: id,
-            }, 'vendas')}
+            onClick={() => {
+              updateSellAndDeposit(userId, {
+                value: Number(calculateValueGain().toFixed(2)),
+                code: id,
+              }, 'vendas');
+              removeCurrencySell(userId, id);
+            }}
           >
             Confirmar
           </button>
