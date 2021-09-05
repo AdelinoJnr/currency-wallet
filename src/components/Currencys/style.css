@@ -11,12 +11,16 @@
   margin-top: 25px;
 }
 
-.input-block input[type="text"] {
-  border: none;
+.input-block > input[type="text"] {
+  width: 160px;
+  height: 30px;
   border-radius: 15px;
-  height: 1.5rem;
-  padding: 0 12px;
-  width: 200px;
+  border: none;
+  text-align: center;
+  font-size: 1.6em;
+  font-family: Cabin;
+  font-weight: 600;
+  background-color: var(--texts-inputs-200);
 }
 
 .input-block p {
@@ -31,9 +35,24 @@
   flex-direction: row;
   justify-content: space-between;
   margin-top: 50px;
-  width: 80vw;
+  width: 321px;
 }
 
 .code-selector {
-  width: 100px;
+  width: 130px;
+}
+
+.content-atualizar {
+  display: flex;
+  justify-content: space-between;
+  width: 220px;
+  align-items: center;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.content-atualizar > a {
+  position: absolute;
+  top: 23px;
+  right: 0;
 }
