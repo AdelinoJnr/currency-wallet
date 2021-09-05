@@ -32,13 +32,13 @@ function Currencys() {
   });
 
   return (
-    <section>
+    <section className="currencys">
       <div className="search-block">
         <div className="input-block">
           <input type="text" onChange={(e) => setNameFilter(e.target.value)} />
           <p>{ nameFilter.length > 0 ? nameFilter : 'Pesquisa por uma moeda' }</p>
         </div>
-        <Select options={selectOptions} onChange={(e) => setNameFilter(e.value)} />
+        <Select className="code-selector" options={selectOptions} onChange={(e) => setNameFilter(e.value)} />
       </div>
       <h3 className="title-3 title-currency">Cripto Moedas</h3>
       { nameFilter.length > 0 ? renderFilteredCoins() : renderCurrencyPopular() }
