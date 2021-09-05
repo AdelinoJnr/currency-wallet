@@ -7,32 +7,35 @@ import Welcome from '../components/Welcome';
 import Investimentos from '../components/Investimentos';
 
 import { CurrencyContext } from '../store/Currency/currency';
-import { calculateBalanceValues, converteInNumber } from '../utils/functions';
+import { getHistoryBuys } from '../utils/historic';
 
 function Wallet() {
   const [totalBalance, setTotalBalance] = useState(0);
   const [lucro, setLucro] = useState(0);
   const { currencyCrypto } = useContext(CurrencyContext);
-  const key = localStorage.getItem('investimentos');
-  const storage = key ? JSON.parse(key) : [];
+  const { userId } = JSON.parse(localStorage.getItem('user'));
 
-  const updateBalance = () => {
-    const lucroCurrent = storage.reduce((acc, curr) => {
-      const inputCurrent = converteInNumber(curr.totalValue);
-      const searchCurrency = currencyCrypto
-        .find((currency) => Object.keys(currency)[0] === curr.code);
-      console.log(searchCurrency);
-      const price = searchCurrency[curr.code].sell;
-      const totalPrice = inputCurrent * price;
-      return acc + totalPrice;
-    }, 0);
-    const data = calculateBalanceValues(storage);
-    const result = Number(lucroCurrent).toFixed(2);
-    const calculate = Number(result) - data;
-    /* const total = calculate >= 0 ? `+ RS ${calculate.toFixed(2)}` : calculate.toFixed(2); */
-    setLucro(calculate);
-    setTotalBalance(data.toFixed(2));
+  const sumTotalBuys = () => {
+    const history = getHistoryBuys(userId).compras;
+    const value = history.reduce((acc, curr) => acc + Number(curr.value), 0);
+    setTotalBalance(value);
   };
+
+  const sumLucroBuys = () => {
+    const history = getHistoryBuys(userId).compras;
+    const value = history.reduce((acc, curr) => {
+      const find = currencyCrypto.find((e) => Object.keys(e)[0] === curr.code);
+      const calculate = Number(curr.totalCurrency) * Number(find[curr.code].buy);
+      const result = Number(calculate) - Number(curr.value);
+      return acc + Number(result);
+    }, 0);
+    setLucro(value);
+  };
+
+  useEffect(() => {
+    sumTotalBuys();
+    sumLucroBuys();
+  }, []);
 
   const renderLucro = (number) => {
     if (number < 0) {
@@ -45,13 +48,10 @@ function Wallet() {
     );
   };
 
-  useEffect(() => {
-    updateBalance();
-  }, []);
-
   const renderInvestments = () => (
     <section className="main-investimentos">
-      {storage.map((item) => <Investimentos key={item.code} investiment={item} />)}
+      {getHistoryBuys(userId).compras
+        .map((item) => <Investimentos key={item.code} investiment={item} />)}
     </section>
   );
 
@@ -80,7 +80,7 @@ function Wallet() {
         <div className="content-balance">
           <div>
             <p>Total Investimentos</p>
-            <span className="total-investiments">{totalBalance}</span>
+            <span className="total-investiments">{`R$ ${totalBalance.toFixed(2)}`}</span>
           </div>
           <div>
             <p>Lucro total</p>

@@ -32,7 +32,7 @@ const mensageError = 'Dinheiro cobrado a mais do que o usuario tem em sua conta'
 
 export const currencyActivity = (valor, condicao, code) => {
   const storage = JSON.parse(localStorage.getItem('user'));
-  const balanceClient = Number(storage.elent);
+  const balanceClient = Number(storage.balance);
   if (condicao === 'comprar' && balanceClient < valor) {
     return console.log(mensageError);
   }
@@ -44,7 +44,7 @@ export const currencyActivity = (valor, condicao, code) => {
   console.log(currencyUser);
   const user = {
     ...storage,
-    elent: currencyUser.toFixed(2),
+    balance: currencyUser.toFixed(2),
   };
   localStorage.setItem('user', JSON.stringify(user));
 };
@@ -85,4 +85,40 @@ export const validadeSaque = (value, conta, name, email, phone) => {
   if (!emailValidator) return false;
   if (phone.length < 10) return false;
   return true;
+};
+
+export const validadeCadastro = (email, firstName, lastName, password, termos) => {
+  const emailValidator = /^[\S.]+@[a-z]+\.\w{2,3}$/g.test(email);
+
+  if (!emailValidator) return false;
+  if (firstName.length < 3) return false;
+  if (lastName.length < 3) return false;
+  if (password.length < 8) return false;
+  if (!termos) return false;
+
+  return true;
+};
+
+export const classButtonsPay = (button) => {
+  if (button === 'Cartao') {
+    return {
+      cartao: 'btn-active',
+      boleto: 'btn-boleto',
+      pix: 'btn-pix',
+    };
+  }
+  if (button === 'Boleto') {
+    return {
+      cartao: 'btn-cartao',
+      boleto: 'btn-active',
+      pix: 'btn-pix',
+    };
+  }
+  if (button === 'Pix') {
+    return {
+      cartao: 'btn-cartao',
+      boleto: 'btn-boleto',
+      pix: 'btn-active',
+    };
+  }
 };

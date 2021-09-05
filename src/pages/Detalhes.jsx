@@ -7,7 +7,7 @@ import Loading from '../components/Loading';
 
 import { currencysNames } from '../data';
 import { getCurrencyApiCryptoQuery } from '../services/requestApi';
-import { currencyActivity, updateLocalStorage } from '../utils/functions';
+import { updateBuyAndSaque } from '../utils/historic';
 
 import './styles.css';
 
@@ -16,6 +16,8 @@ function Detalhes({ match }) {
   const [currentValue, setcurrentValue] = useState('');
   const { buy } = currency;
   const { id } = match.params;
+
+  const { userId } = JSON.parse(localStorage.getItem('user'));
 
   useEffect(() => {
     const fetchAPI = async () => {
@@ -64,21 +66,22 @@ function Detalhes({ match }) {
           <p>{`${id} ${renderValueToPayBRL()}`}</p>
         </div>
 
-        <Link
-          onClick={() => {
-            currencyActivity(Number(currentValue), 'comprar');
-            updateLocalStorage('investimentos', {
-              code: id,
-              buy,
-              nome: currencysNames[id],
-              currentValue,
-              totalValue: renderValueToPayBRL(),
-            });
-          }}
-          className="link-btn"
-          to="/"
-        >
-          <button disabled={currentValue === ''} type="button" className="btn-acao btn-comprar">Comprar</button>
+        <Link className="link-btn" to="/">
+          <button
+            onClick={() => {
+              updateBuyAndSaque(userId, {
+                value: Number(currentValue),
+                code: id,
+                buy: Number(buy),
+                totalCurrency: renderValueToPayBRL(),
+              }, 'compras');
+            }}
+            disabled={currentValue === ''}
+            type="button"
+            className="btn-acao btn-comprar"
+          >
+            Comprar
+          </button>
         </Link>
       </section>
       <Footer />

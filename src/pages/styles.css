@@ -75,10 +75,14 @@
 
 .btn-depositar {
   background-color: var(--blue-color-600);
+  font-family: Poppins;
+  font-size: 1.5em;
 }
 
 .btn-sacar {
   background-color: var(--pink-color-600);
+  font-family: Poppins;
+  font-size: 1.5em;
 }
 
 .content-btn-atividades-user {
@@ -235,7 +239,7 @@
   text-align: center;
   width: 140px;
   height: 15px;
-  font-size: 1.5em;
+  font-size: 1.4em;
   font-weight: 600;
   font-family: Cabin;
 }
@@ -243,18 +247,8 @@
 .content-full-name {
   display: flex;
   margin-top: 25px;
-  width: 95%;
+  width: 340px;
   justify-content: space-between;
-}
-
-.input-date {
-  padding: 10px;
-  border-radius: 20px;
-  border: none;
-  width: 140px;
-  height: 15px;margin-top: 20px;
-  background-color: var(--texts-inputs-400);
-  text-align: center;
 }
 
 .label-input {
@@ -277,18 +271,6 @@
 .link-cadastrar-btn {
   width: 100%;
   text-align: center;
-}
-
-.btn-cadastrar {
-  font-size: 1.6em;
-  font-family: Poppins;
-  background-color: var(--blue-color-600);
-  margin-top: 30px;
-}
-
-.content-avatares > img {
-  margin: 10px 5px;
-  width: 45px;
 }
 
 /* Detalhes */
@@ -448,37 +430,6 @@
   color: var(--texts-inputs-400);
 }
 
-.content-metodo-pagament {
-  width: 330px;
-  margin: 0 auto 30px;
-}
-
-.content-metodo-pagament > button {
-  width: 100px;
-  height: 30px;
-  border-radius: 15px;
-  border: none;
-  margin: 5px 5px;
-}
-
-.btn-pix:active,
-.btn-pix:hover,
-.btn-boleto:active,
-.btn-boleto:hover,
-.btn-cartao:active,
-.btn-cartao:hover {
-  background-color: var(--blue-color-600);
-}
-
-.btn-pix,
-.btn-boleto,
-.btn-cartao {
-  background-color: var(--pink-color-600);
-  font-family: Poppins;
-  font-size: 1.4em;
-  color: var(--texts-inputs-200);
-}
-
 .link-deposit {
   width: 240px;
   height: 30px;
@@ -550,4 +501,11 @@
   border-radius: 7px;
   border: none;
   margin: 0 auto;
+}
+
+.select-content {
+  font-size: 1.5em;
+  font-family: Poppins;
+  padding: 0 15px;
+  color: #666;
 }

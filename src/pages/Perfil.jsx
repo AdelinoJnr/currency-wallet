@@ -3,20 +3,21 @@ import { Link } from 'react-router-dom';
 import Footer from '../components/Footer';
 import Header from '../components/Header';
 import Welcome from '../components/Welcome';
-
-import Obama from '../image/barack_obama.jpg';
+import { avatars, userDefault } from '../data';
 
 function Perfil() {
+  const key = localStorage.getItem('user');
+  const { name, email, avatar } = key ? JSON.parse(key) : userDefault;
   return (
     <>
       <Header />
       <Welcome />
       <section>
         <section className="content-perfil">
-          <img className="img-user-perfil" src={Obama} alt="Foto do Usuario" />
+          <img className="img-user-perfil" src={avatars[avatar]} alt="Avatar" />
           <div className="content-data-user">
-            <p className="user-name-perfil">Barack Obama</p>
-            <p className="user-email-perfil">barackobama@gmail.com</p>
+            <p className="user-name-perfil">{name}</p>
+            <p className="user-email-perfil">{email}</p>
           </div>
         </section>
         <section className="content-btn-perfil">
@@ -27,7 +28,7 @@ function Perfil() {
             <button
               className="btn btn-exit"
               type="button"
-              onClick={() => localStorage.removeItem('user')}
+              onClick={() => localStorage.setItem('user', JSON.stringify({}))}
             >
               Sair
             </button>

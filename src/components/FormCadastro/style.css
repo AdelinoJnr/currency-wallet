@@ -1,0 +1,21 @@
+/* FromCadastro */
+.btn-cadastrar {
+  font-size: 1.6em;
+  font-family: Poppins;
+  background-color: var(--blue-color-600);
+  margin-top: 30px;
+}
+
+.form-cadastro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.btn-cadastrar:disabled {
+  background-color: var(--blue-color-400);
+}
+
+.label-input {
+  margin-top: 15px;
+}

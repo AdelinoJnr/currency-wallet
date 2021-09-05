@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { currencyActivity, validadeGereneteCartao } from '../../utils/functions';
+import { validadeGereneteCartao } from '../../utils/functions';
+import { updateSellAndDeposit } from '../../utils/historic';
 import Opiton from '../Options';
 
 import './style.css';
@@ -11,11 +12,13 @@ function FormDeposit({ value }) {
   const [vencimento, setVencimento] = useState('');
   const [conta, setConta] = useState('');
 
+  const { userId } = JSON.parse(localStorage.getItem('user'));
+
   const renderOptions = () => {
     if (value < 100) {
       const totalOption = [1, 2];
       return (
-        <select>
+        <select className="select-content">
           {totalOption.map((item) => <Opiton value={item} inputValue={value} />)}
         </select>
       );
@@ -23,14 +26,14 @@ function FormDeposit({ value }) {
     if (value < 1000) {
       const totalOption = [1, 2, 3, 4, 5];
       return (
-        <select>
+        <select className="select-content">
           {totalOption.map((item) => <Opiton value={item} inputValue={value} />)}
         </select>
       );
     }
     const totalOption = [1, 2, 3, 4, 5, 6, 7, 8];
     return (
-      <select>
+      <select className="select-content">
         {totalOption.map((item) => <Opiton value={item} inputValue={value} />)}
       </select>
     );
@@ -83,7 +86,11 @@ function FormDeposit({ value }) {
         <Link className="link-deposit" to="/">
           <button
             className="btn-acao btn-deposit"
-            onClick={() => currencyActivity(value, 'adicionar')}
+            onClick={() => updateSellAndDeposit(userId, {
+              value,
+              metodo: 'cartão',
+              name: nomeTitular,
+            }, 'deposito')}
             type="button"
             disabled={!validadeGereneteCartao(nomeTitular, cvv, vencimento, conta)}
           >
