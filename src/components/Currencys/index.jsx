@@ -5,6 +5,7 @@ import { currencysNames } from '../../data';
 
 import CardCurrency from '../CardCurrency';
 import Loading from '../Loading';
+import Atualizar from '../Atualizar';
 
 import './style.css';
 
@@ -35,12 +36,15 @@ function Currencys() {
     <section className="currencys">
       <div className="search-block">
         <div className="input-block">
-          <input type="text" onChange={(e) => setNameFilter(e.target.value)} />
+          <input placeholder="Pesquisar" type="text" onChange={(e) => setNameFilter(e.target.value)} />
           <p>{ nameFilter.length > 0 ? nameFilter : 'Pesquisa por uma moeda' }</p>
         </div>
-        <Select className="code-selector" options={selectOptions} onChange={(e) => setNameFilter(e.value)} />
+        <Select className="select-content code-selector" options={selectOptions} onChange={(e) => setNameFilter(e.value)} />
       </div>
-      <h3 className="title-3 title-currency">Cripto Moedas</h3>
+      <div className="content-atualizar">
+        <h3 className="title-3 title-currency">Cripto Moedas</h3>
+        <Atualizar />
+      </div>
       { nameFilter.length > 0 ? renderFilteredCoins() : renderCurrencyPopular() }
     </section>
   );
