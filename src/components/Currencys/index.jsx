@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-
+import Select from 'react-select';
 import { CurrencyContext } from '../../store/Currency/currency';
 import { currencysNames } from '../../data';
 
@@ -12,9 +12,14 @@ function Currencys() {
   const { currencyPopular, currencyCrypto } = useContext(CurrencyContext);
   const [nameFilter, setNameFilter] = useState('');
 
+  const selectOptions = Object.keys(currencysNames).map((code) => {
+    const optionObject = { value: code, label: code };
+    return optionObject;
+  });
+
   const filteredOptions = currencyCrypto?.filter((c) => {
     const code = Object.keys(c)[0];
-    return currencysNames[code].toLowerCase().includes(nameFilter);
+    return currencysNames[code].toLowerCase().includes(nameFilter) || code === nameFilter;
   });
 
   const renderCurrencyPopular = () => currencyPopular.map((currency) => (
@@ -28,9 +33,12 @@ function Currencys() {
 
   return (
     <section>
-      <div className="input-block">
-        <input type="text" onChange={(e) => setNameFilter(e.target.value)} />
-        <p>{ nameFilter.length > 0 ? nameFilter : 'Pesquisa por uma moeda' }</p>
+      <div className="search-block">
+        <div className="input-block">
+          <input type="text" onChange={(e) => setNameFilter(e.target.value)} />
+          <p>{ nameFilter.length > 0 ? nameFilter : 'Pesquisa por uma moeda' }</p>
+        </div>
+        <Select options={selectOptions} onChange={(e) => setNameFilter(e.value)} />
       </div>
       <h3 className="title-3 title-currency">Cripto Moedas</h3>
       { nameFilter.length > 0 ? renderFilteredCoins() : renderCurrencyPopular() }
