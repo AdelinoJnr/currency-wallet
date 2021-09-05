@@ -32,8 +32,8 @@ function Withdraw() {
 
       <form className="form-sacar">
         <h4 className="title-3">Preencher os dados</h4>
-        <select onChange={(ev) => setBank(ev.target.value)} name="banco">
-          <option value="">-- Esolha seu banco --</option>
+        <select className="select-content" onChange={(ev) => setBank(ev.target.value)} name="banco">
+          <option selected>-- Esolha seu banco --</option>
           <option value="caixa">Caixa economica federal</option>
           <option value="brasil">Banco do Brasil</option>
           <option value="itau">Banco Itaú</option>

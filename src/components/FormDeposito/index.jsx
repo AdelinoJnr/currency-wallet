@@ -18,7 +18,7 @@ function FormDeposit({ value }) {
     if (value < 100) {
       const totalOption = [1, 2];
       return (
-        <select>
+        <select className="select-content">
           {totalOption.map((item) => <Opiton value={item} inputValue={value} />)}
         </select>
       );
@@ -26,14 +26,14 @@ function FormDeposit({ value }) {
     if (value < 1000) {
       const totalOption = [1, 2, 3, 4, 5];
       return (
-        <select>
+        <select className="select-content">
           {totalOption.map((item) => <Opiton value={item} inputValue={value} />)}
         </select>
       );
     }
     const totalOption = [1, 2, 3, 4, 5, 6, 7, 8];
     return (
-      <select>
+      <select className="select-content">
         {totalOption.map((item) => <Opiton value={item} inputValue={value} />)}
       </select>
     );
