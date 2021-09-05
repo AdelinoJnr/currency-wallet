@@ -1,12 +1,14 @@
 /* Currencys */
-.title-currency {
-    color: var(--blue-color-600);
-    margin-top: 15px;
+.currencys {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-.input-block {
-  margin-top: 50px;
-  margin-left: 25px;
+.title-currency {
+  color: var(--blue-color-600);
+  margin-top: 25px;
 }
 
 .input-block input[type="text"] {
@@ -14,11 +16,24 @@
   border-radius: 15px;
   height: 1.5rem;
   padding: 0 12px;
-  width: 30%;
+  width: 200px;
 }
 
 .input-block p {
   color: white;
   margin-left: 5px;
   margin-top: 2px;
+}
+
+.search-block {
+  align-self: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 50px;
+  width: 80vw;
+}
+
+.code-selector {
+  width: 100px;
 }
