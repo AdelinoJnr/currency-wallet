@@ -98,3 +98,27 @@ export const validadeCadastro = (email, firstName, lastName, password, termos) =
 
   return true;
 };
+
+export const classButtonsPay = (button) => {
+  if (button === 'Cartao') {
+    return {
+      cartao: 'btn-active',
+      boleto: 'btn-boleto',
+      pix: 'btn-pix',
+    };
+  }
+  if (button === 'Boleto') {
+    return {
+      cartao: 'btn-cartao',
+      boleto: 'btn-active',
+      pix: 'btn-pix',
+    };
+  }
+  if (button === 'Pix') {
+    return {
+      cartao: 'btn-cartao',
+      boleto: 'btn-boleto',
+      pix: 'btn-active',
+    };
+  }
+};
