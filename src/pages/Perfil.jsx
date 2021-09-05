@@ -28,7 +28,7 @@ function Perfil() {
             <button
               className="btn btn-exit"
               type="button"
-              onClick={() => localStorage.removeItem('user')}
+              onClick={() => localStorage.setItem('user', JSON.stringify({}))}
             >
               Sair
             </button>

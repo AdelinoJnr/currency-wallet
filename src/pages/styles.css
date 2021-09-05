@@ -75,10 +75,14 @@
 
 .btn-depositar {
   background-color: var(--blue-color-600);
+  font-family: Poppins;
+  font-size: 1.5em;
 }
 
 .btn-sacar {
   background-color: var(--pink-color-600);
+  font-family: Poppins;
+  font-size: 1.5em;
 }
 
 .content-btn-atividades-user {

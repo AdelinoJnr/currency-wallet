@@ -3,14 +3,18 @@ import { Link } from 'react-router-dom';
 
 import Footer from '../components/Footer';
 import HeaderBack from '../components/HeaderBack';
-import { currencyActivity, validadeSaque } from '../utils/functions';
+import { validadeSaque } from '../utils/functions';
+import { updateBuyAndSaque } from '../utils/historic';
 
 function Withdraw() {
-  const [valueWithdraw, setValueWithdraw] = useState('');
+  const [valuedraw, setValuedraw] = useState('');
   const [nomeTitular, setNomeTitular] = useState('');
   const [email, setEmail] = useState('');
   const [conta, setConta] = useState('');
+  const [bank, setBank] = useState('');
   const [telefone, setTelefone] = useState('');
+
+  const { userId } = JSON.parse(localStorage.getItem('user'));
 
   return (
     <>
@@ -18,8 +22,8 @@ function Withdraw() {
       <div className="content-saque">
         <p>Quanto deseja sacar ?</p>
         <input
-          value={valueWithdraw}
-          onChange={(ev) => setValueWithdraw(ev.target.value)}
+          value={valuedraw}
+          onChange={(ev) => setValuedraw(ev.target.value)}
           type="number"
           name="saque"
           placeholder="Valor"
@@ -28,7 +32,7 @@ function Withdraw() {
 
       <form className="form-sacar">
         <h4 className="title-3">Preencher os dados</h4>
-        <select name="banco" id="banco">
+        <select onChange={(ev) => setBank(ev.target.value)} name="banco">
           <option value="">-- Esolha seu banco --</option>
           <option value="caixa">Caixa economica federal</option>
           <option value="brasil">Banco do Brasil</option>
@@ -66,8 +70,13 @@ function Withdraw() {
         />
         <Link className="content-btn" to="/">
           <button
-            onClick={() => currencyActivity(valueWithdraw, 'sacar')}
-            disabled={!validadeSaque(valueWithdraw, conta, nomeTitular, email, telefone)}
+            onClick={() => updateBuyAndSaque(userId, {
+              value: valuedraw,
+              name: nomeTitular,
+              email,
+              bank,
+            }, 'saque')}
+            disabled={!validadeSaque(valuedraw, conta, nomeTitular, email, telefone)}
             type="button"
             className="btn-acao btn-saque"
           >
