@@ -39,6 +39,8 @@
 
 - Dados dessa aplicação foram extraídos da <a href="https://www.mercadobitcoin.com.br/api-doc/">API Mercado bitcoin</a>.
 
+<br>
+
 ⛔ OBS: Todo dinheiro manipulado na aplicação, é ficticio assim como quaisquer dados bancarios ou de indentificação do usuario nao passam sobre qualquer tipo de validação.
 
 
@@ -58,14 +60,16 @@
 ## 📷 imagens
 <br>
 
-<img width="200" src='./src/image/apresentacaoPerfil.png' />
-<img width="200" src='./src/image/apresentacaoWallet.png' />
-<img width="200" src='./src/image/apresentacaoHome.png' />
-<img width="200" src='./src/image/apresentacaoDeposito.png' />
+<div display="flex">
+  <img width="200" src='./src/image/apresentacaoPerfil.png' />
+  <img width="200" src='./src/image/apresentacaoWallet.png' />
+  <img width="200" src='./src/image/apresentacaoHome.png' />
+  <img width="200" src='./src/image/apresentacaoDeposito.png' />
+</div>
 
 ## 🎥 video
 
-<img src="./src/image/apresentacaoTryWalletGif.gif" alt="GIF" />
+<img width="300" src="./src/image/apresentacaoTryWalletGit.gif" alt="GIF" />
 
 ## 🙋🏻‍♂️ Autores
 
