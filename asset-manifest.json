@@ -1,29 +1,29 @@
 {
   "files": {
-    "main.css": "/currency-wallet/static/css/main.eeb162cc.chunk.css",
-    "main.js": "/currency-wallet/static/js/main.202a9fe6.chunk.js",
-    "main.js.map": "/currency-wallet/static/js/main.202a9fe6.chunk.js.map",
-    "runtime-main.js": "/currency-wallet/static/js/runtime-main.f57a222a.js",
-    "runtime-main.js.map": "/currency-wallet/static/js/runtime-main.f57a222a.js.map",
-    "static/js/2.bd6e746c.chunk.js": "/currency-wallet/static/js/2.bd6e746c.chunk.js",
-    "static/js/2.bd6e746c.chunk.js.map": "/currency-wallet/static/js/2.bd6e746c.chunk.js.map",
-    "static/js/3.aa01d54d.chunk.js": "/currency-wallet/static/js/3.aa01d54d.chunk.js",
-    "static/js/3.aa01d54d.chunk.js.map": "/currency-wallet/static/js/3.aa01d54d.chunk.js.map",
-    "index.html": "/currency-wallet/index.html",
-    "static/css/main.eeb162cc.chunk.css.map": "/currency-wallet/static/css/main.eeb162cc.chunk.css.map",
-    "static/js/2.bd6e746c.chunk.js.LICENSE.txt": "/currency-wallet/static/js/2.bd6e746c.chunk.js.LICENSE.txt",
-    "static/media/avatar1.8243e0d6.png": "/currency-wallet/static/media/avatar1.8243e0d6.png",
-    "static/media/avatar2.72638a93.png": "/currency-wallet/static/media/avatar2.72638a93.png",
-    "static/media/avatar3.8a90f650.png": "/currency-wallet/static/media/avatar3.8a90f650.png",
-    "static/media/avatar4.254c9265.png": "/currency-wallet/static/media/avatar4.254c9265.png",
-    "static/media/avatar5.bd03ec96.png": "/currency-wallet/static/media/avatar5.bd03ec96.png",
-    "static/media/avatar6.c4637e17.png": "/currency-wallet/static/media/avatar6.c4637e17.png",
-    "static/media/goku-correndo.24b52000.gif": "/currency-wallet/static/media/goku-correndo.24b52000.gif"
+    "main.css": "/login/static/css/main.bcbc0743.chunk.css",
+    "main.js": "/login/static/js/main.2d2b6a9d.chunk.js",
+    "main.js.map": "/login/static/js/main.2d2b6a9d.chunk.js.map",
+    "runtime-main.js": "/login/static/js/runtime-main.bbdcb948.js",
+    "runtime-main.js.map": "/login/static/js/runtime-main.bbdcb948.js.map",
+    "static/js/2.33ea7109.chunk.js": "/login/static/js/2.33ea7109.chunk.js",
+    "static/js/2.33ea7109.chunk.js.map": "/login/static/js/2.33ea7109.chunk.js.map",
+    "static/js/3.00955087.chunk.js": "/login/static/js/3.00955087.chunk.js",
+    "static/js/3.00955087.chunk.js.map": "/login/static/js/3.00955087.chunk.js.map",
+    "index.html": "/login/index.html",
+    "static/css/main.bcbc0743.chunk.css.map": "/login/static/css/main.bcbc0743.chunk.css.map",
+    "static/js/2.33ea7109.chunk.js.LICENSE.txt": "/login/static/js/2.33ea7109.chunk.js.LICENSE.txt",
+    "static/media/avatar1.8243e0d6.png": "/login/static/media/avatar1.8243e0d6.png",
+    "static/media/avatar2.72638a93.png": "/login/static/media/avatar2.72638a93.png",
+    "static/media/avatar3.8a90f650.png": "/login/static/media/avatar3.8a90f650.png",
+    "static/media/avatar4.254c9265.png": "/login/static/media/avatar4.254c9265.png",
+    "static/media/avatar5.bd03ec96.png": "/login/static/media/avatar5.bd03ec96.png",
+    "static/media/avatar6.c4637e17.png": "/login/static/media/avatar6.c4637e17.png",
+    "static/media/goku-correndo.24b52000.gif": "/login/static/media/goku-correndo.24b52000.gif"
   },
   "entrypoints": [
-    "static/js/runtime-main.f57a222a.js",
-    "static/js/2.bd6e746c.chunk.js",
-    "static/css/main.eeb162cc.chunk.css",
-    "static/js/main.202a9fe6.chunk.js"
+    "static/js/runtime-main.bbdcb948.js",
+    "static/js/2.33ea7109.chunk.js",
+    "static/css/main.bcbc0743.chunk.css",
+    "static/js/main.2d2b6a9d.chunk.js"
   ]
 }
