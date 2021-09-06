@@ -87,7 +87,7 @@ function FormDeposit({ value }) {
           <button
             className="btn-acao btn-deposit"
             onClick={() => updateSellAndDeposit(userId, {
-              value,
+              value: Number(value),
               metodo: 'cartão',
               name: nomeTitular,
             }, 'deposito')}

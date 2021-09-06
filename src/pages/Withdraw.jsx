@@ -71,7 +71,7 @@ function Withdraw() {
         <Link className="content-btn" to="/">
           <button
             onClick={() => updateBuyAndSaque(userId, {
-              value: valuedraw,
+              value: Number(valuedraw),
               name: nomeTitular,
               email,
               bank,
