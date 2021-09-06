@@ -1,6 +1,5 @@
+import moment from 'moment';
 import { currencysNames } from '../data';
-
-const moment = require('moment');
 
 const STRING_DATE = 'DD MM YYYY hh:mm:ss';
 
