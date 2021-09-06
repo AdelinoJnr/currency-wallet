@@ -21,7 +21,7 @@
 
 # 📕 Resumo
 
-<span>Aplicativo de monitoriamente de moedas onde o usuário pode depositar e sacar dinheiro fictício, para executar operações de compra e vendas das moedas.</span>
+<span>Aplicativo versão mobile de monitoriamente de moedas onde o usuário pode depositar e sacar dinheiro fictício, para executar operações de compra e vendas das moedas.</span>
 
 <br>
 
@@ -55,13 +55,17 @@
 ## 🎨 Apresentação
 <br>
 
-### 📷 imagens
+## 📷 imagens
+<br>
 
-....
+<img width="200" src='./src/image/apresentacaoPerfil.png' />
+<img width="200" src='./src/image/apresentacaoWallet.png' />
+<img width="200" src='./src/image/apresentacaoHome.png' />
+<img width="200" src='./src/image/apresentacaoDeposito.png' />
 
-### 🎥 video
+## 🎥 video
 
-....
+<img src="./src/image/apresentacaoTryWalletGif.gif" alt="GIF" />
 
 ## 🙋🏻‍♂️ Autores
 
@@ -76,15 +80,15 @@
   <div>
     <img width="200" src='./src/image/foto-perfil-mallmann.jpg' />
     <div>
-      <a href="https://www.linkedin.com/in/adelinojr/"><img src="https://img.shields.io/badge/linkedin-0077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white"></a>
-      <a href="https://github.com/AdelinoJnr"><img src="https://img.shields.io/badge/github-161616.svg?style=for-the-badge&logo=github&logoColor=white"></a>
+      <a href="https://www.linkedin.com/in/leonardo-mallmann/"><img src="https://img.shields.io/badge/linkedin-0077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white"></a>
+      <a href="https://github.com/mallmann02"><img src="https://img.shields.io/badge/github-161616.svg?style=for-the-badge&logo=github&logoColor=white"></a>
     </div>
   </div>
   <div>
     <img width="200" src='./src/image/avatar5.png' />
     <div>
-      <a href="https://www.linkedin.com/in/adelinojr/"><img src="https://img.shields.io/badge/linkedin-0077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white"></a>
-      <a href="https://github.com/AdelinoJnr"><img src="https://img.shields.io/badge/github-161616.svg?style=for-the-badge&logo=github&logoColor=white"></a>
+      <a href="https://www.linkedin.com/in/murilogon/"><img src="https://img.shields.io/badge/linkedin-0077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white"></a>
+      <a href="https://github.com/MuriloGon"><img src="https://img.shields.io/badge/github-161616.svg?style=for-the-badge&logo=github&logoColor=white"></a>
     </div>
   </div>
 </div>

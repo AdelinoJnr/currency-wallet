@@ -16,7 +16,7 @@ function History() {
       compras, deposito, saque, vendas,
     } = getHistoric(userId);
     const historyUser = [...compras, ...deposito, ...saque, ...vendas]
-      .sort((a, b) => a.registerDate - b.registerDate);
+      .sort((a, b) => b.registerDate - a.registerDate);
     setHistory(historyUser);
   }, []);
 

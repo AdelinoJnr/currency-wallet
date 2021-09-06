@@ -52,6 +52,7 @@ function FormDeposit({ value }) {
         className="inputs-deposit"
         type="text"
         name="titular"
+        autoComplete="off"
         placeholder="Nome do Titular"
         value={nomeTitular}
         onChange={(ev) => setNomeTitular(ev.target.value)}
