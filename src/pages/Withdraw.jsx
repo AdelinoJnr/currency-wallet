@@ -46,6 +46,7 @@ function Withdraw() {
           placeholder="Número da conta"
           value={conta}
           onChange={(ev) => setConta(ev.target.value)}
+          autoComplete="off"
         />
         <input
           type="text"
@@ -53,6 +54,7 @@ function Withdraw() {
           placeholder="Nome do Titular"
           value={nomeTitular}
           onChange={(ev) => setNomeTitular(ev.target.value)}
+          autoComplete="off"
         />
         <input
           type="text"
@@ -71,7 +73,7 @@ function Withdraw() {
         <Link className="content-btn" to="/">
           <button
             onClick={() => updateBuyAndSaque(userId, {
-              value: valuedraw,
+              value: Number(valuedraw),
               name: nomeTitular,
               email,
               bank,

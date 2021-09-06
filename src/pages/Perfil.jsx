@@ -21,9 +21,12 @@ function Perfil() {
           </div>
         </section>
         <section className="content-btn-perfil">
-          <button className="btn btn-historic" type="button">
-            Historico de compras
-          </button>
+          <Link to="/history">
+            <button className="btn btn-historic" type="button">
+              Historico de compras
+            </button>
+          </Link>
+
           <Link to="/login">
             <button
               className="btn btn-exit"

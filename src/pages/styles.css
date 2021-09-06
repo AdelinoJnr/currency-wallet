@@ -509,3 +509,25 @@
   padding: 0 15px;
   color: #666;
 }
+
+/* History */
+.title-history {
+  margin-top: 50px;
+  color: var(--blue-color-600);
+}
+
+.content-history {
+  color: var(--texts-inputs-400);
+  font-size: 1.4em;
+  width: 321px;
+  margin: 30px auto 0;
+  text-align: center;
+}
+
+.content-history > p{
+  margin: 25px 0;
+}
+
+.content-history > p:last-child {
+  margin-bottom: 70px;
+}

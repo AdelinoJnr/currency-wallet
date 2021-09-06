@@ -15,6 +15,7 @@ import Withdraw from './pages/Withdraw';
 
 import './styles/global.css';
 import { initUserKey } from './utils/UserLogin';
+import History from './pages/History';
 
 function App() {
   useEffect(() => {
@@ -25,6 +26,7 @@ function App() {
     <CurrencyProvider>
       <Switch>
         <Route path="/login" component={Login} />
+        <Route path="/history" component={History} />
         <Route path="/cadastro" component={Cadastro} />
         <Route path="/depositar" component={Deposit} />
         <Route path="/saque" component={Withdraw} />

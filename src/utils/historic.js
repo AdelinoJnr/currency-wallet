@@ -1,4 +1,7 @@
-/* import { userAccess } from './UserLogin'; */
+import moment from 'moment';
+import { currencysNames } from '../data';
+
+const STRING_DATE = 'DD MM YYYY hh:mm:ss';
 
 export const getUsers = () => {
   const rawData = localStorage.getItem('users');
@@ -10,8 +13,8 @@ export const getUsers = () => {
 };
 
 export const getHistoric = (userId) => {
-  const { historic } = getUsers().find((e) => e.userId === userId);
-  return historic;
+  const { history } = getUsers().find((e) => e.userId === userId);
+  return history;
 };
 
 export const updateBuyAndSaque = (userId, action, key) => {
@@ -20,6 +23,7 @@ export const updateBuyAndSaque = (userId, action, key) => {
   const newDeposit = {
     ...action,
     registerDate,
+    type: key,
   };
   const modificSaque = users.map((e) => {
     if (userId === e.userId && action.value < e.balance) {
@@ -48,6 +52,7 @@ export const updateSellAndDeposit = (userId, action, key) => {
   const newDeposit = {
     ...action,
     registerDate,
+    type: key,
   };
   const modificSaque = users.map((e) => {
     if (userId === e.userId) {
@@ -101,3 +106,11 @@ export const removeCurrencySell = (userId, code) => {
   };
   setHistoryUser(userId, newHistory);
 };
+
+export const historyDeposito = ({ value, metodo, registerDate }) => `Deposito no valor de ${`R$ ${value.toFixed(2)}`}, com metodo ${metodo}, na data ${moment(new Date(registerDate), STRING_DATE)}`;
+
+export const historySaque = ({ value, bank, registerDate }) => `Saque para o Banco ${bank}, no valor de ${`R$ ${value.toFixed(2)}`}, na data ${moment(new Date(registerDate), STRING_DATE)}`;
+
+export const historyCompras = ({ code, value, registerDate }) => `Investimento na moeda ${currencysNames[code]}, no valor de ${`R$ ${value.toFixed(2)}`}, na data ${moment(new Date(registerDate), STRING_DATE)}`;
+
+export const historyVendas = ({ code, value, registerDate }) => `Venda realizada no valor de ${`R$ ${value.toFixed(2)}`}, da moeda ${currencysNames[code]}, na data ${moment(new Date(registerDate), STRING_DATE)}`;

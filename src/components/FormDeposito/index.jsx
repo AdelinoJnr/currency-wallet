@@ -52,6 +52,7 @@ function FormDeposit({ value }) {
         className="inputs-deposit"
         type="text"
         name="titular"
+        autoComplete="off"
         placeholder="Nome do Titular"
         value={nomeTitular}
         onChange={(ev) => setNomeTitular(ev.target.value)}
@@ -87,7 +88,7 @@ function FormDeposit({ value }) {
           <button
             className="btn-acao btn-deposit"
             onClick={() => updateSellAndDeposit(userId, {
-              value,
+              value: Number(value),
               metodo: 'cartão',
               name: nomeTitular,
             }, 'deposito')}
