@@ -43,7 +43,7 @@ export function userExists(email) {
 
 export function authUser(email, password) {
   // if (!userExists(email)) throw Error('User does not exists');
-  if (!userExists(email)) return alert('User does not exists');
+  if (!userExists(email)) return;
   const user = getUsers().find((usr) => usr.email === email);
   return (user.email === email) && (user.password === password);
 }

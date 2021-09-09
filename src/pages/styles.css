@@ -129,6 +129,20 @@
   font-family: Cabin;
 }
 
+input.invalid {
+  border: 1px solid red;
+}
+
+.validation-message {
+  visibility: hidden;
+}
+
+.validation-message.on {
+  color: var(--purple-color-600);
+  margin-top: 2px;
+  visibility: visible;
+}
+
 .btn-logar {
   background-color: var(--blue-color-600);
   font-size: 1.6em;
