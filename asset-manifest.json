@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/currency-wallet/static/css/main.bcbc0743.chunk.css",
-    "main.js": "/currency-wallet/static/js/main.2d2b6a9d.chunk.js",
-    "main.js.map": "/currency-wallet/static/js/main.2d2b6a9d.chunk.js.map",
-    "runtime-main.js": "/currency-wallet/static/js/runtime-main.0bdcd9fa.js",
-    "runtime-main.js.map": "/currency-wallet/static/js/runtime-main.0bdcd9fa.js.map",
-    "static/js/2.33ea7109.chunk.js": "/currency-wallet/static/js/2.33ea7109.chunk.js",
-    "static/js/2.33ea7109.chunk.js.map": "/currency-wallet/static/js/2.33ea7109.chunk.js.map",
-    "static/js/3.00955087.chunk.js": "/currency-wallet/static/js/3.00955087.chunk.js",
-    "static/js/3.00955087.chunk.js.map": "/currency-wallet/static/js/3.00955087.chunk.js.map",
+    "main.css": "/currency-wallet/static/css/main.7dee4e9d.chunk.css",
+    "main.js": "/currency-wallet/static/js/main.4dfa73cb.chunk.js",
+    "main.js.map": "/currency-wallet/static/js/main.4dfa73cb.chunk.js.map",
+    "runtime-main.js": "/currency-wallet/static/js/runtime-main.6ebebad0.js",
+    "runtime-main.js.map": "/currency-wallet/static/js/runtime-main.6ebebad0.js.map",
+    "static/js/2.3f1939c0.chunk.js": "/currency-wallet/static/js/2.3f1939c0.chunk.js",
+    "static/js/2.3f1939c0.chunk.js.map": "/currency-wallet/static/js/2.3f1939c0.chunk.js.map",
+    "static/js/3.b4f1ad4c.chunk.js": "/currency-wallet/static/js/3.b4f1ad4c.chunk.js",
+    "static/js/3.b4f1ad4c.chunk.js.map": "/currency-wallet/static/js/3.b4f1ad4c.chunk.js.map",
     "index.html": "/currency-wallet/index.html",
-    "static/css/main.bcbc0743.chunk.css.map": "/currency-wallet/static/css/main.bcbc0743.chunk.css.map",
-    "static/js/2.33ea7109.chunk.js.LICENSE.txt": "/currency-wallet/static/js/2.33ea7109.chunk.js.LICENSE.txt",
+    "static/css/main.7dee4e9d.chunk.css.map": "/currency-wallet/static/css/main.7dee4e9d.chunk.css.map",
+    "static/js/2.3f1939c0.chunk.js.LICENSE.txt": "/currency-wallet/static/js/2.3f1939c0.chunk.js.LICENSE.txt",
     "static/media/avatar1.8243e0d6.png": "/currency-wallet/static/media/avatar1.8243e0d6.png",
     "static/media/avatar2.72638a93.png": "/currency-wallet/static/media/avatar2.72638a93.png",
     "static/media/avatar3.8a90f650.png": "/currency-wallet/static/media/avatar3.8a90f650.png",
@@ -21,9 +21,9 @@
     "static/media/goku-correndo.24b52000.gif": "/currency-wallet/static/media/goku-correndo.24b52000.gif"
   },
   "entrypoints": [
-    "static/js/runtime-main.0bdcd9fa.js",
-    "static/js/2.33ea7109.chunk.js",
-    "static/css/main.bcbc0743.chunk.css",
-    "static/js/main.2d2b6a9d.chunk.js"
+    "static/js/runtime-main.6ebebad0.js",
+    "static/js/2.3f1939c0.chunk.js",
+    "static/css/main.7dee4e9d.chunk.css",
+    "static/js/main.4dfa73cb.chunk.js"
   ]
 }
