@@ -21,7 +21,7 @@
 
 # 📕 Resumo
 
-<span>Aplicativo versão mobile de monitoriamente de moedas onde o usuário pode depositar e sacar dinheiro fictício, para executar operações de compra e vendas das moedas.</span>
+<span>Aplicativo versão mobile de monitoramento de criptomoedas onde o usuário pode depositar e sacar dinheiro fictício, para executar operações de compra e vendas das criptomoedas.</span>
 
 <br>
 
